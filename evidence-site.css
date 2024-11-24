@@ -1,0 +1,340 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2818
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww8460\viewh19280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0  <style>\
+.evidence-container \{\
+  width: 100vw;\
+  min-height: fit-content;\
+  background: black;\
+  color: white;\
+  padding: 1rem 0; /* Reduced vertical padding, removed horizontal padding */\
+  margin: 0;\
+  position: relative;\
+  left: 50%;\
+  transform: translateX(-50%);\
+\}\
+\
+.evidence-grid \{\
+  max-width: 2000px;\
+  margin: 0 auto;\
+  display: grid;\
+  grid-template-columns: repeat(12, 1fr);\
+  gap: 2rem;\
+  padding: 0 2rem; /* Added horizontal padding to grid instead */\
+\}\
+\
+/* Grid Parent */\
+.evidence-grid \{\
+  display: grid;\
+  grid-template-columns: repeat(12, 1fr); /* 12-column layout */\
+  gap: 2rem;\
+  max-width: 1200px; /* Constrain the grid width */\
+  margin: 0 auto; /* Centers the grid */\
+\}\
+\
+/* Grid Column */\
+.col-span-3 \{\
+  grid-column: span 3; /* Takes 3 columns in the grid */\
+  text-align: center; /* Centers content within this column */\
+\}\
+\
+/* Search Bar */\
+.search-bar \{\
+  margin-top: 1rem; /* Space between the title and search bar */\
+  display: flex; /* Aligns input and button horizontally */\
+  align-items: center; /* Vertically centers the input and button */\
+  gap: 0.5rem; /* Adds spacing between the input and button */\
+  width: fit-content; /* Takes only the necessary space */\
+\}\
+\
+/* Input Field */\
+#searchInput \{\
+  padding: 0.5rem;\
+  border: 1px solid #444;\
+  color: white;\
+  background: black;\
+  width: 120px; /* Just enough for 3-4 digits */\
+  font-family: inherit; /* Matches the site's font */\
+  text-align: center; /* Aligns text inside the input field */\
+  text-transform: uppercase; /* Converts text to uppercase */\
+  font-size: 0.875rem; /* Matches the text size of categories/traits */\
+  letter-spacing: 0.1em; /* Matches the spacing of categories/traits text */\
+\}\
+\
+/* Button */\
+button \{\
+  padding: 0.5rem 1rem;\
+  background: #666;\
+  border: none;\
+  color: black;\
+  cursor: pointer;\
+  font-family: inherit; /* Matches the site's font */\
+  text-transform: uppercase; /* Converts button text to uppercase */\
+  font-size: 0.875rem; /* Matches the text size of categories/traits */\
+  letter-spacing: 0.1em; /* Matches the spacing of categories/traits text */\
+  transition: all 0.2s ease-in-out;\
+\}\
+\
+button:hover \{\
+  background: #FFC700;\
+\}\
+\
+#result-container \{\
+  margin-top: 2rem;\
+  text-align: left;\
+\}\
+\
+#image-display img \{\
+  max-width: 100%;\
+  height: auto;\
+  border: 1px solid #444;\
+  margin-bottom: 1rem;\
+\}\
+\
+#attributes-display div \{\
+  margin: 0.5rem 0;\
+  font-size: 0.9rem;\
+\}\
+\
+    .evidence-container \{\
+      width: 100%;\
+      min-height: 100vh;\
+      background: black;\
+      color: white;\
+      padding: 2rem;\
+      font-family: system-ui, -apple-system, sans-serif;\
+    \}\
+\
+    .evidence-grid \{\
+      max-width: 2000px;\
+      margin: 0 auto;\
+      display: grid;\
+      grid-template-columns: repeat(12, 1fr);\
+      gap: 2rem;\
+    \}\
+\
+    .col-span-3 \{ \
+      grid-column: span 3; \
+      max-width: 100%;\
+    \}\
+    \
+    .col-span-6 \{ grid-column: span 6; \}\
+\
+    .image-container \{\
+      position: relative;\
+      width: 100%;\
+      margin-bottom: 1rem;\
+      background: #111;\
+      overflow: hidden; /* Added to ensure image containment */\
+    \}\
+\
+    .evidence-image \{\
+      width: 100%;\
+      height: auto;\
+      display: block;\
+      max-width: 100%; /* Ensure image doesn't overflow */\
+    \}\
+\
+    .evidence-title \{\
+      font-size: 1.5rem;\
+      font-weight: 300;\
+      letter-spacing: 0.1em;\
+      display: flex;\
+      align-items: center;\
+      gap: 1rem;\
+      margin-top: 1rem;\
+    \}\
+\
+    <!-- Search Bar -->\
+<div class="search-bar">\
+  <input \
+    type="text" \
+    id="searchInput" \
+    placeholder="Enter Image Number (1-36)" \
+    style="\
+      padding: 0.5rem; \
+      border: 1px solid #444; \
+      color: white; \
+      background: black; \
+      width: 80%; \
+      max-width: 300px;"\
+  />\
+  <button \
+    onclick="searchImage()" \
+    style="\
+      padding: 0.5rem; \
+      margin-left: 0.5rem; \
+      background: #FFD700; \
+      border: none; \
+      color: black; \
+      cursor: pointer; \
+      font-family: inherit;"\
+  >\
+    Search\
+  </button>\
+</div>\
+\
+    .piece-label \{\
+      color: #999;\
+    \}\
+\
+    .section-title \{\
+      font-size: 0.875rem;\
+      font-weight: 300;\
+      letter-spacing: 0.1em;\
+      color: #999;\
+      margin-bottom: 1rem;\
+      text-transform: uppercase;\
+    \}\
+\
+    .data-card \{\
+      background: rgba(255, 255, 255, 0.03);\
+      border: 1px solid rgba(255, 255, 255, 0.1);\
+      padding: 1rem;\
+      margin-bottom: 1rem;\
+    \}\
+\
+    .metric-row \{\
+      display: flex;\
+      justify-content: space-between;\
+      font-size: 0.875rem;\
+      margin-bottom: 0.5rem;\
+    \}\
+\
+    .series-tag \{\
+      display: inline-block;\
+      padding: 0.25rem 0.5rem;\
+      margin: 0.25rem;\
+      font-size: 0.75rem;\
+      border-radius: 2px;\
+      background: rgba(255, 255, 255, 0.1);\
+    \}\
+\
+    .related-piece \{\
+      display: flex;\
+      align-items: center;\
+      padding: 0.5rem 0;\
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);\
+    \}\
+\
+    .percentage-bar \{\
+      height: 4px;\
+      background: rgba(255, 255, 255, 0.1);\
+      margin-top: 4px;\
+    \}\
+\
+    .percentage-fill \{\
+      height: 100%;\
+      background: currentColor;\
+    \}\
+\
+    #rarityMap \{\
+  width: 100%;\
+  height: 100%;\
+  display: flex;\
+  align-items: center;\
+  justify-content: center;\
+\}\
+\
+.piece-node \{\
+  transition: all 0.3s ease;\
+\}\
+\
+.piece-node:hover \{\
+  opacity: 1;\
+  cursor: pointer;\
+\}\
+/* Single consolidated set of media queries */\
+@media screen and (max-width: 1200px) \{\
+  .evidence-grid \{\
+    grid-template-columns: repeat(6, 1fr);\
+    gap: 1.5rem;\
+  \}\
+\
+  .col-span-3:nth-child(1) \{ /* Image and title */\
+    grid-column: span 6;\
+    max-width: 600px;\
+    margin: 0 auto;\
+  \}\
+\
+  .col-span-6 \{ /* About section and visualization */\
+    grid-column: span 6;\
+  \}\
+\
+  .col-span-3:nth-child(3), /* Categories & Traits */\
+  .col-span-3:nth-child(4), /* Analysis */\
+  .col-span-3:nth-child(5) \{ /* Additional sections */\
+    grid-column: span 3;\
+  \}\
+\}\
+\
+@media screen and (max-width: 768px) \{\
+  /* Container adjustments */\
+  .evidence-container \{\
+    padding: 1rem;\
+    width: 100%;\
+    overflow-x: hidden;\
+  \}\
+\
+  /* Reset grid */\
+  .evidence-grid \{\
+    display: flex;\
+    flex-direction: column;\
+    gap: 1rem;\
+    width: 100%;\
+  \}\
+\
+  /* Stack everything vertically */\
+  .col-span-3,\
+  .col-span-6 \{\
+    width: 100%;\
+    padding: 0;\
+  \}\
+\
+  /* Set specific order */\
+  .col-span-3:nth-child(1) \{ order: 1; \} /* Image and title */\
+  .col-span-6:nth-child(2) \{ order: 2; \} /* About section */\
+  .col-span-3:nth-child(3) \{ order: 3; \} /* Categories */\
+  .col-span-6:nth-child(4) \{ order: 4; \} /* Visualization */\
+  .col-span-3:nth-child(5) \{ order: 5; \} /* Analysis */\
+\
+  /* Component adjustments */\
+  .data-card \{\
+    width: 100%;\
+    margin-bottom: 1rem;\
+    padding: 0.75rem;\
+  \}\
+\
+  .section-title \{\
+    font-size: 0.8rem;\
+    margin-bottom: 0.75rem;\
+  \}\
+\
+  #visualization \{\
+    width: 100%;\
+    aspect-ratio: 1;\
+  \}\
+\
+  .metric-row \{\
+    flex-wrap: wrap;\
+    gap: 0.5rem;\
+  \}\
+\}\
+\
+/* Touch device optimizations */\
+@media (hover: none) \{\
+  .piece-node:hover \{\
+    opacity: 1;\
+  \}\
+\
+  .related-piece,\
+  .metric-row \{\
+    min-height: 44px;\
+    padding: 0.5rem 0;\
+  \}\
+\}\
+  </style>}
