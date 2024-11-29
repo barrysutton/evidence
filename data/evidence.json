@@ -1,6 +1,7 @@
 {
     "001": {
-        "about": "Chronological Fragment with intricate relationships across multiple dimensions.",
+        "id": "001",
+        "about": "Creative beginnings materialize here, capturing the moment where time becomes visible. The piece reveals how artistic decisions take shape, leaving traces of their evolution in an organized pattern.",
         "traits": {
             "temporal": {
                 "name": "Chronological Fragment",
@@ -17,13 +18,23 @@
             "emergent": {
                 "name": "Echo Pattern",
                 "value": 0.12
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "001",
-        "id": "001"
+        "series": [],
+        "imageUrl": "https://arweave.net/K2ZmslrnMkDk3nUuYSZufbgBlqAYtg04a-2M7bPXEsg",
+        "relatedPieces": [
+            "006",
+            "015",
+            "020"
+        ]
     },
     "002": {
-        "about": "Present State Record with intricate relationships across multiple dimensions.",
+        "id": "002",
+        "about": "Digital memory flows through empty spaces, preserving present moments in structured void. The work shows how creative thoughts solidify, forming patterns in the gaps between structure and chaos.",
         "traits": {
             "temporal": {
                 "name": "Present State Record",
@@ -40,13 +51,23 @@
             "emergent": {
                 "name": "Matrix Evidence",
                 "value": 0.12
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "002",
-        "id": "002"
+        "series": [],
+        "imageUrl": "https://arweave.net/beDQvzBSgkNZdL1yQCz6HhJLJ1PoUE9vkqyUg6zTWXU",
+        "relatedPieces": [
+            "011",
+            "019",
+            "027"
+        ]
     },
     "003": {
-        "about": "Linear Time Data with intricate relationships across multiple dimensions.",
+        "id": "003",
+        "about": "Linear thinking transforms through chemical processes, marking new territories of understanding. The work captures how structured thoughts encounter unexpected variables, creating patterns at the horizon of possibility.",
         "traits": {
             "temporal": {
                 "name": "Linear Time Data",
@@ -63,13 +84,25 @@
             "emergent": {
                 "name": "Horizon Document",
                 "value": 0.1
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "003",
-        "id": "003"
+        "series": [
+            "Chemical Horizons"
+        ],
+        "imageUrl": "https://arweave.net/Ux0siuJVOmCRM7k7AZ432_JRKj38c4oEPLv5QDWynLU",
+        "relatedPieces": [
+            "013",
+            "028",
+            "034"
+        ]
     },
     "004": {
-        "about": "Time Spiral with intricate relationships across multiple dimensions.",
+        "id": "004",
+        "about": "Cyclical patterns spiral through natural proportions, documenting mathematical harmony. The work reveals how creative process finds balance, moving through different states of transformation.",
         "traits": {
             "temporal": {
                 "name": "Time Spiral",
@@ -92,11 +125,19 @@
                 "value": 0.02
             }
         },
-        "name": "004",
-        "id": "004"
+        "series": [
+            "Fibonacci"
+        ],
+        "imageUrl": "https://arweave.net/xcPMNdx6-nZcJ9KVCG-IQXa3Q1dngaz4Kb-wJujRtjw",
+        "relatedPieces": [
+            "032",
+            "009",
+            "026"
+        ]
     },
     "005": {
-        "about": "Archive Timeline with intricate relationships across multiple dimensions.",
+        "id": "005",
+        "about": "Systems in transition emerge here, as archived information flows through varying densities. The creative process reveals itself through patterns of systematic evolution.",
         "traits": {
             "temporal": {
                 "name": "Archive Timeline",
@@ -113,13 +154,23 @@
             "emergent": {
                 "name": "Data Flow",
                 "value": 0.1
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "005",
-        "id": "005"
+        "series": [],
+        "imageUrl": "https://arweave.net/uOficBlVlVKpSj5SBmZM7QLeQnOhynNohVPlS77BIOw",
+        "relatedPieces": [
+            "008",
+            "023",
+            "031"
+        ]
     },
     "006": {
-        "about": "Horizon Chronology with intricate relationships across multiple dimensions.",
+        "id": "006",
+        "about": "Atmospheric forces gather and disperse, where linear patterns meet cloud-like formations. Creative thoughts follow natural rhythms of accumulation, mapping pathways of structured thinking.",
         "traits": {
             "temporal": {
                 "name": "Horizon Chronology",
@@ -136,13 +187,23 @@
             "emergent": {
                 "name": "Cloud Formation",
                 "value": 0.15
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "006",
-        "id": "006"
+        "series": [],
+        "imageUrl": "https://arweave.net/Kj-_j10LQYd7QRh_MJ_3dpY4Zva_QqJwmGfiTQOfV-I",
+        "relatedPieces": [
+            "020",
+            "027",
+            "031"
+        ]
     },
     "007": {
-        "about": "Spectrum Timeline with intricate relationships across multiple dimensions.",
+        "id": "007",
+        "about": "Light and time filter through digital consciousness, revealing quantum traces of possibility. Creative thought splits into spectrum-wide patterns, touching the edges of perceptible form.",
         "traits": {
             "temporal": {
                 "name": "Spectrum Timeline",
@@ -159,13 +220,25 @@
             "emergent": {
                 "name": "Rainbow Pattern",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "007",
-        "id": "007"
+        "series": [
+            "Quantum"
+        ],
+        "imageUrl": "https://arweave.net/kg2y-1AoyQb5TkFiymq_YUDcwsJN6ls5T_qftSbNDAs",
+        "relatedPieces": [
+            "014",
+            "023",
+            "032"
+        ]
     },
     "008": {
-        "about": "Terrain Timeline with intricate relationships across multiple dimensions.",
+        "id": "008",
+        "about": "Geological processes shape understanding across creative topography. Artistic thinking forms landscapes of meaning, structured yet organic in their evolution.",
         "traits": {
             "temporal": {
                 "name": "Terrain Timeline",
@@ -182,13 +255,23 @@
             "emergent": {
                 "name": "Mountain Data",
                 "value": 0.1
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "008",
-        "id": "008"
+        "series": [],
+        "imageUrl": "https://arweave.net/rTIXlYl-K_GKsCBGgDcjKipgmxp0ILKEqtjF6wNAx80",
+        "relatedPieces": [
+            "025",
+            "026",
+            "030"
+        ]
     },
     "009": {
-        "about": "Lunar Time Measure with intricate relationships across multiple dimensions.",
+        "id": "009",
+        "about": "Celestial motion follows golden proportions as ethereal patterns traverse void spaces. Creative thought finds harmony in astronomical rhythms, touching both earth and sky.",
         "traits": {
             "temporal": {
                 "name": "Lunar Time Measure",
@@ -211,11 +294,19 @@
                 "value": 0.05
             }
         },
-        "name": "009",
-        "id": "009"
+        "series": [
+            "Fibonacci"
+        ],
+        "imageUrl": "https://arweave.net/s7nwDll2ia3zAbNnqtffPPTTLz_FXUhcBuNa6JSiTQM",
+        "relatedPieces": [
+            "004",
+            "026",
+            "032"
+        ]
     },
     "010": {
-        "about": "Code Timeline with intricate relationships across multiple dimensions.",
+        "id": "010",
+        "about": "Encoded creativity emerges through chromatic sampling and documented patterns. Digital signals preserve creative impulses in structured sequences, revealing the architecture of artistic decisions.",
         "traits": {
             "temporal": {
                 "name": "Code Timeline",
@@ -232,13 +323,23 @@
             "emergent": {
                 "name": "Signal Evidence",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "010",
-        "id": "010"
+        "series": [],
+        "imageUrl": "https://arweave.net/d5IrutJJMrF4J9orm1AZYI1s95Qy8Bnr6iq0pFUBYBw",
+        "relatedPieces": [
+            "016",
+            "029",
+            "031"
+        ]
     },
     "011": {
-        "about": "Void Memory with intricate relationships across multiple dimensions.",
+        "id": "011",
+        "about": "Memory materializes through mist, navigating pathways of negative space. Spatial analysis captures moments where void becomes form, tracking the evolution of creative consciousness.",
         "traits": {
             "temporal": {
                 "name": "Void Memory",
@@ -255,13 +356,23 @@
             "emergent": {
                 "name": "Negative Space Data",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "011",
-        "id": "011"
+        "series": [],
+        "imageUrl": "https://arweave.net/9zjdz375Y11VdsnQ4XWKUr8YkIFec_6yle7CbAAPnIc",
+        "relatedPieces": [
+            "002",
+            "019",
+            "035"
+        ]
     },
     "012": {
-        "about": "Desert Timeline with intricate relationships across multiple dimensions.",
+        "id": "012",
+        "about": "Desert chronology unfolds through mineral compositions and parallel structures. Creative patterns emerge from elemental interactions, revealing the nature of terrain-based thinking.",
         "traits": {
             "temporal": {
                 "name": "Desert Timeline",
@@ -278,13 +389,23 @@
             "emergent": {
                 "name": "Terrain Pattern",
                 "value": 0.1
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "012",
-        "id": "012"
+        "series": [],
+        "imageUrl": "https://arweave.net/Y-0Bc9gJovFveq3wMY7yfC8UgZs024Q_jASvRBKA47k",
+        "relatedPieces": [
+            "025",
+            "030",
+            "036"
+        ]
     },
     "013": {
-        "about": "Linear Archive with intricate relationships across multiple dimensions.",
+        "id": "013",
+        "about": "Linear archives interpret geological records, mapping creative topology. Data pathways form through layers of artistic decision-making, preserving moments of structured insight.",
         "traits": {
             "temporal": {
                 "name": "Linear Archive",
@@ -301,13 +422,23 @@
             "emergent": {
                 "name": "Memory Trace",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "013",
-        "id": "013"
+        "series": [],
+        "imageUrl": "https://arweave.net/F0iJWSyu36x0TYEgsjPyar1IQfps47RGDxpbbeRY_FM",
+        "relatedPieces": [
+            "003",
+            "025",
+            "034"
+        ]
     },
     "014": {
-        "about": "Horizon Void with intricate relationships across multiple dimensions.",
+        "id": "014",
+        "about": "Shadow realms intersect with quantum fields, tracing creative consciousness at perception's edge. Cosmic patterns emerge in artistic thought, revealing hidden dimensions of possibility.",
         "traits": {
             "temporal": {
                 "name": "Horizon Void",
@@ -324,13 +455,25 @@
             "emergent": {
                 "name": "Cosmic Evidence",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "014",
-        "id": "014"
+        "series": [
+            "Quantum"
+        ],
+        "imageUrl": "https://arweave.net/6LbQqyynme-9mfV3XyRMN2WXH1UudtlG2L3zvaXWchk",
+        "relatedPieces": [
+            "007",
+            "023",
+            "032"
+        ]
     },
     "015": {
-        "about": "Fragment Record with intricate relationships across multiple dimensions.",
+        "id": "015",
+        "about": "Mountain formations preserve fragmented memories of dawn. Spatial recollection shapes creative process, capturing first light as it transforms structured thinking.",
         "traits": {
             "temporal": {
                 "name": "Fragment Record",
@@ -347,13 +490,23 @@
             "emergent": {
                 "name": "Dawn Pattern",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "015",
-        "id": "015"
+        "series": [],
+        "imageUrl": "https://arweave.net/eFHV6L3AVWxtm4lnRuirPILp5h2J4nBxNiALt3c5cX8",
+        "relatedPieces": [
+            "008",
+            "025",
+            "034"
+        ]
     },
     "016": {
-        "about": "Data Timeline with intricate relationships across multiple dimensions.",
+        "id": "016",
+        "about": "Data streams cascade through light artifacts, where code meets chromatic evidence. Digital frameworks translate creative impulses into visual language, preserving thought in structured form.",
         "traits": {
             "temporal": {
                 "name": "Data Timeline",
@@ -370,13 +523,23 @@
             "emergent": {
                 "name": "Color Evidence",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "016",
-        "id": "016"
+        "series": [],
+        "imageUrl": "https://arweave.net/JahTJudjJhBSOpCQxaC44hvPobduZDn2q9f24aqqLoI",
+        "relatedPieces": [
+            "010",
+            "029",
+            "034"
+        ]
     },
     "017": {
-        "about": "Binary Anomaly with intricate relationships across multiple dimensions.",
+        "id": "017",
+        "about": "Binary anomalies split reality into parallel possibilities. Creative process flows through dimensional portals, marking moments where singular thought becomes multiple.",
         "traits": {
             "temporal": {
                 "name": "Binary Anomaly",
@@ -393,13 +556,25 @@
             "emergent": {
                 "name": "Dual Reality",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "017",
-        "id": "017"
+        "series": [
+            "Time Anomalies"
+        ],
+        "imageUrl": "https://arweave.net/JQF1Hn9CUl65GeA2eCS_6ZOxqQJ9X4bzWZ8LcANU5Ms",
+        "relatedPieces": [
+            "032",
+            "033",
+            "036"
+        ]
     },
     "018": {
-        "about": "Wave Memory with intricate relationships across multiple dimensions.",
+        "id": "018",
+        "about": "Wave memories ripple through fluid dynamics, distorting temporal perception. Artistic thought finds new pathways of expression, flowing beyond established channels.",
         "traits": {
             "temporal": {
                 "name": "Wave Memory",
@@ -416,13 +591,23 @@
             "emergent": {
                 "name": "Path Evidence",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "018",
-        "id": "018"
+        "series": [],
+        "imageUrl": "https://arweave.net/rISZ104wcKBsb2AjO3QM4Qq1zaw7sDuycVLqSgWlsLA",
+        "relatedPieces": [
+            "004",
+            "017",
+            "036"
+        ]
     },
     "019": {
-        "about": "Static Record with intricate relationships across multiple dimensions.",
+        "id": "019",
+        "about": "Static records intersect vertical patterns as void matter generates luminous fragments. Creative energy distributes across structured space, marking territories of potential.",
         "traits": {
             "temporal": {
                 "name": "Static Record",
@@ -439,13 +624,23 @@
             "emergent": {
                 "name": "Light Fragment",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "019",
-        "id": "019"
+        "series": [],
+        "imageUrl": "https://arweave.net/FwvpJ4CP0pYXoA02wYD_J4TJVcj_tKQH7Vo9bLmlOo8",
+        "relatedPieces": [
+            "002",
+            "011",
+            "016"
+        ]
     },
     "020": {
-        "about": "Horizon Archive with intricate relationships across multiple dimensions.",
+        "id": "020",
+        "about": "Horizon archives filter through field samples, tracking edges of creative development. Cloud data reveals atmospheric nature of artistic thought, preserving moments of transformation.",
         "traits": {
             "temporal": {
                 "name": "Horizon Archive",
@@ -462,13 +657,23 @@
             "emergent": {
                 "name": "Cloud Data",
                 "value": 0.1
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "020",
-        "id": "020"
+        "series": [],
+        "imageUrl": "https://arweave.net/-hVH-eF3nr2hO35Vb9eAswvbvChpUMKf0pe3muxr9J8",
+        "relatedPieces": [
+            "006",
+            "027",
+            "031"
+        ]
     },
     "021": {
-        "about": "Spectrum Record with intricate relationships across multiple dimensions.",
+        "id": "021",
+        "about": "Spectral recordings merge with prismatic structures, dispersing creative thought through wavelengths of possibility. Rainbow frequencies capture artistic process in motion.",
         "traits": {
             "temporal": {
                 "name": "Spectrum Record",
@@ -485,13 +690,23 @@
             "emergent": {
                 "name": "Prism Pattern",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "021",
-        "id": "021"
+        "series": [],
+        "imageUrl": "https://arweave.net/34HALU52LMYaGTmnTsA2fSEC7G6qcckzR8MqoHDaapE",
+        "relatedPieces": [
+            "007",
+            "016",
+            "029"
+        ]
     },
     "022": {
-        "about": "Fade Timeline with intricate relationships across multiple dimensions.",
+        "id": "022",
+        "about": "Mist gradients interact with horizontal fields, tracking dissolution patterns. Desert environments shape creative consciousness, marking fade patterns across structured space.",
         "traits": {
             "temporal": {
                 "name": "Fade Timeline",
@@ -508,13 +723,23 @@
             "emergent": {
                 "name": "Desert Void",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "022",
-        "id": "022"
+        "series": [],
+        "imageUrl": "https://arweave.net/hvHcW8QquM7kCkyy415dvx_E3G7_8nuflIe-Xo4SUy8",
+        "relatedPieces": [
+            "011",
+            "025",
+            "030"
+        ]
     },
     "023": {
-        "about": "Data Horizon with intricate relationships across multiple dimensions.",
+        "id": "023",
+        "about": "Data horizons unfold through spectral sampling, organizing quantum information. Creative thought arranges itself across mathematical frameworks, revealing hidden symmetries.",
         "traits": {
             "temporal": {
                 "name": "Data Horizon",
@@ -531,13 +756,25 @@
             "emergent": {
                 "name": "Color Stream",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "023",
-        "id": "023"
+        "series": [
+            "Quantum"
+        ],
+        "imageUrl": "https://arweave.net/XLJZBHtLmfNCq1SdjU-fxytZsfrSM7w1KJMUIvoRfs4",
+        "relatedPieces": [
+            "007",
+            "014",
+            "032"
+        ]
     },
     "024": {
-        "about": "Lunar Drift with intricate relationships across multiple dimensions.",
+        "id": "024",
+        "about": "Lunar drift patterns influence spatial sections, tracking celestial rhythms. Creative development follows moon-based thinking, revealing anomalies in temporal structure.",
         "traits": {
             "temporal": {
                 "name": "Lunar Drift",
@@ -554,13 +791,23 @@
             "emergent": {
                 "name": "Moon Anomaly",
                 "value": 0.03
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "024",
-        "id": "024"
+        "series": [],
+        "imageUrl": "https://arweave.net/FdoIAsdi0t1EeWTfOGY092PE4n-EnJjX0F1IecwwHD4",
+        "relatedPieces": [
+            "009",
+            "017",
+            "035"
+        ]
     },
     "025": {
-        "about": "Earth Timeline with intricate relationships across multiple dimensions.",
+        "id": "025",
+        "about": "Earth's timeline emerges through native sampling and measurement grids. Terrestrial processes shape creative understanding, capturing patterns of environmental consciousness.",
         "traits": {
             "temporal": {
                 "name": "Earth Timeline",
@@ -577,13 +824,23 @@
             "emergent": {
                 "name": "Desert Pattern",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "025",
-        "id": "025"
+        "series": [],
+        "imageUrl": "https://arweave.net/okqBhYXSnOGK7MuLet4VzkIC12zohTsrvv_d9DDVG4c",
+        "relatedPieces": [
+            "008",
+            "012",
+            "030"
+        ]
     },
     "026": {
-        "about": "Wave Record with intricate relationships across multiple dimensions.",
+        "id": "026",
+        "about": "Wave recordings resonate through terra matter, following golden spirals in mountain traces. Creative process aligns with earth's rhythms, revealing natural harmonies in artistic thought.",
         "traits": {
             "temporal": {
                 "name": "Wave Record",
@@ -606,11 +863,19 @@
                 "value": 0.05
             }
         },
-        "name": "026",
-        "id": "026"
+        "series": [
+            "Fibonacci"
+        ],
+        "imageUrl": "https://arweave.net/3oXM5nz1Bf1K9xUXYwCQbDOhezKSxIyAe_DyZgR9rfc",
+        "relatedPieces": [
+            "004",
+            "009",
+            "032"
+        ]
     },
     "027": {
-        "about": "Horizon State with intricate relationships across multiple dimensions.",
+        "id": "027",
+        "about": "Horizon states filter through ethereal sampling, where vertical fields touch sky voids. Atmospheric nature of creative thought manifests in structured space, marking boundaries of perception.",
         "traits": {
             "temporal": {
                 "name": "Horizon State",
@@ -627,13 +892,23 @@
             "emergent": {
                 "name": "Sky Void",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "027",
-        "id": "027"
+        "series": [],
+        "imageUrl": "https://arweave.net/OznguM3bkE_ltu5x1bWBfcrN_nRzDiP9eZpBefjLQ3k",
+        "relatedPieces": [
+            "006",
+            "020",
+            "035"
+        ]
     },
     "028": {
-        "about": "Linear Sequence with intricate relationships across multiple dimensions.",
+        "id": "028",
+        "about": "Mineral light refracts through linear sequences, where gradient patterns meet dawn. Creative consciousness adapts to changing conditions, marking transitions in artistic development.",
         "traits": {
             "temporal": {
                 "name": "Linear Sequence",
@@ -650,13 +925,23 @@
             "emergent": {
                 "name": "Dawn Spectrum",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "028",
-        "id": "028"
+        "series": [],
+        "imageUrl": "https://arweave.net/7TETKWWOSfmUyLQyqNdNkTqiEdqjHPjFW39eFLJBqDw",
+        "relatedPieces": [
+            "015",
+            "021",
+            "034"
+        ]
     },
     "029": {
-        "about": "Color Timeline with intricate relationships across multiple dimensions.",
+        "id": "029",
+        "about": "Color timelines evolve through pixel structures, generating circuit evidence. Creativity moves through technological frameworks, marking digital pathways of artistic thought.",
         "traits": {
             "temporal": {
                 "name": "Color Timeline",
@@ -673,13 +958,23 @@
             "emergent": {
                 "name": "Circuit Evidence",
                 "value": 0.03
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "029",
-        "id": "029"
+        "series": [],
+        "imageUrl": "https://arweave.net/YRNxm9PLDptTSBP2_y7Ghdbv17x9uwTeLinb_t22JaA",
+        "relatedPieces": [
+            "010",
+            "016",
+            "021"
+        ]
     },
     "030": {
-        "about": "Desert Record with intricate relationships across multiple dimensions.",
+        "id": "030",
+        "about": "Ancient matter shapes desert records, forming earth codes in data ridges. Primordial patterns influence creative development, revealing temporal depths of artistic consciousness.",
         "traits": {
             "temporal": {
                 "name": "Desert Record",
@@ -696,13 +991,23 @@
             "emergent": {
                 "name": "Earth Code",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "030",
-        "id": "030"
+        "series": [],
+        "imageUrl": "https://arweave.net/RWLc38c-7o_jfQZFU8pxD15uIOo-bDG1dFZyGYiRjrM",
+        "relatedPieces": [
+            "012",
+            "025",
+            "036"
+        ]
     },
     "031": {
-        "about": "Code Archive with intricate relationships across multiple dimensions.",
+        "id": "031",
+        "about": "Cloud matrices interpret coded archives, shaping digital space through vertical flows. Artistic process moves between structured data and atmospheric patterns, marking points of transformation.",
         "traits": {
             "temporal": {
                 "name": "Code Archive",
@@ -719,13 +1024,23 @@
             "emergent": {
                 "name": "Cloud Matrix",
                 "value": 0.05
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "031",
-        "id": "031"
+        "series": [],
+        "imageUrl": "https://arweave.net/1LjlKgJ7gFhZdVC6jZtCTDgwP4XCTC9OfzHBaFSFTRk",
+        "relatedPieces": [
+            "006",
+            "020",
+            "027"
+        ]
     },
     "032": {
-        "about": "Spectrum Anomaly with intricate relationships across multiple dimensions.",
+        "id": "032",
+        "about": "Spectral anomalies converge with orbital matter, touching nebula formations. Creative consciousness achieves rare harmony through fibonacci sequences, bridging mathematical precision and cosmic possibility.",
         "traits": {
             "temporal": {
                 "name": "Spectrum Anomaly",
@@ -748,11 +1063,20 @@
                 "value": 0.02
             }
         },
-        "name": "032",
-        "id": "032"
+        "series": [
+            "Fibonacci",
+            "Time Anomalies"
+        ],
+        "imageUrl": "https://arweave.net/bFeWd6b1Yd-kRPnw45-n4wsrZGfhoapFhucSRUzvpnc",
+        "relatedPieces": [
+            "004",
+            "009",
+            "026"
+        ]
     },
     "033": {
-        "about": "Memory Fragment with intricate relationships across multiple dimensions.",
+        "id": "033",
+        "about": "Memory fragments resonate through human traces, generating ghost patterns in color fields. Creative process preserves ethereal moments of awareness, marking instances of conscious materialization.",
         "traits": {
             "temporal": {
                 "name": "Memory Fragment",
@@ -769,13 +1093,23 @@
             "emergent": {
                 "name": "Ghost Pattern",
                 "value": 0.02
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "033",
-        "id": "033"
+        "series": [],
+        "imageUrl": "https://arweave.net/Bk_SX2RnJngQImlgysRO_8ZgvDHR8oN21kmpXRrX08A",
+        "relatedPieces": [
+            "011",
+            "017",
+            "035"
+        ]
     },
     "034": {
-        "about": "Light Archive with intricate relationships across multiple dimensions.",
+        "id": "034",
+        "about": "Luminous histories filter through amber sampling, where horizon grids capture dawn. Transitional states of creative development emerge through time, preserved in traces of light.",
         "traits": {
             "temporal": {
                 "name": "Light Archive",
@@ -792,13 +1126,23 @@
             "emergent": {
                 "name": "Dawn Trace",
                 "value": 0.08
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "034",
-        "id": "034"
+        "series": [],
+        "imageUrl": "https://arweave.net/Uq0j9fMjSrndOVYrGSmFWMaACOVo6H0AA9vIiwQTDoM",
+        "relatedPieces": [
+            "015",
+            "016",
+            "028"
+        ]
     },
     "035": {
-        "about": "Void Echo with intricate relationships across multiple dimensions.",
+        "id": "035",
+        "about": "Void echoes resonate through mist fields, suggesting infinite space through edge patterns. Creative thought finds balance in dual golden points, revealing symmetries of artistic consciousness.",
         "traits": {
             "temporal": {
                 "name": "Void Echo",
@@ -821,11 +1165,19 @@
                 "value": 0.05
             }
         },
-        "name": "035",
-        "id": "035"
+        "series": [
+            "Fibonacci"
+        ],
+        "imageUrl": "https://arweave.net/cEPFhXWW-BtdP0p9GOy9M0sMvj3ksN3u_RNxIKMGads",
+        "relatedPieces": [
+            "009",
+            "026",
+            "032"
+        ]
     },
     "036": {
-        "about": "Time Strata with intricate relationships across multiple dimensions.",
+        "id": "036",
+        "about": "Time strata builds through cloud matter, where linear archives meet cosmic fields. Creative process accumulates in layers of understanding, marking final temporal signatures of thought.",
         "traits": {
             "temporal": {
                 "name": "Time Strata",
@@ -842,9 +1194,20 @@
             "emergent": {
                 "name": "Cosmic Field",
                 "value": 0.03
+            },
+            "fibonacci": {
+                "name": "None",
+                "value": 0
             }
         },
-        "name": "036",
-        "id": "036"
+        "series": [
+            "Time Anomalies"
+        ],
+        "imageUrl": "https://arweave.net/N7XfUkkpmcSZxxpSWJOBTD5HQ6gnE1njJFnMTv8OI5A",
+        "relatedPieces": [
+            "017",
+            "032",
+            "033"
+        ]
     }
 }

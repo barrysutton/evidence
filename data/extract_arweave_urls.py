@@ -1,8 +1,8 @@
 import json
 
 # File paths
-input_file = "/Users/barrysutton/Dropbox/evidence-data-viz/data/evidence.json"  # Absolute path to the evidence JSON file
-output_file = "/Users/barrysutton/Dropbox/evidence-data-viz/data/arweave_urls.json"  # Absolute path for output file
+input_file = "/Users/barrysutton/Dropbox/evidence/data/evidence.json"  # Absolute path to the evidence JSON file
+output_file = "/Users/barrysutton/Dropbox/evidence/data/arweave_urls.json"  # Absolute path for output file
 
 def extract_arweave_urls(input_file, output_file):
     try:
