@@ -1,101 +1,79 @@
-import Image from "next/image";
+type Node = {
+  id: string;
+  name: string;
+  relatedPieces?: { id: string; similarity: number }[];
+  group?: number;
+  value?: number;
+  main?: boolean;
+  related?: boolean;
+  background?: boolean;
+  similarity?: number;
+};
 
-export default function Home() {
+type Link = {
+  source: string;
+  target: string;
+  value: number;
+};
+
+type GraphData = {
+  nodes: Node[];
+  links: Link[];
+};
+
+import ForceGraph from "./forcegraph.js";
+import evidenceData from '../data/evidence.json';
+
+const extractMainAndRelated = (data: { [id: string]: Node }, mainId: string): GraphData => {
+  const mainNode = data[mainId];
+  if (!mainNode) {
+    console.error(`Main node with ID ${mainId} not found!`);
+    return { nodes: [], links: [] };
+  }
+
+  // Extract related nodes dynamically
+  const relatedNodes = mainNode.relatedPieces?.map((related: { id: string; similarity: number }) => ({
+    ...data[related.id],
+    id: related.id,
+    similarity: related.similarity,
+    related: true,
+  })) || [];
+
+  // Include all other nodes marked as "background"
+  const backgroundNodes = Object.keys(data)
+    .filter((id) => id !== mainId && !relatedNodes.some((r) => r.id === id))
+    .map((id) => ({
+      ...data[id],
+      id,
+      background: true,
+    }));
+
+  // Combine all nodes
+  const nodes: Node[] = [
+    { ...mainNode, id: mainId, main: true },
+    ...relatedNodes,
+    ...backgroundNodes,
+  ];
+
+  // Create links dynamically for relationships
+  const links: Link[] = relatedNodes.map((related) => ({
+    source: mainId,
+    target: related.id,
+    value: related.similarity * 10,
+  }));
+
+  return { nodes, links };
+};
+
+// Extract data for the main node (e.g., "032") and its related works
+const mainId = "032";
+const formattedData = extractMainAndRelated(evidenceData, mainId);
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <main>
+      <h1 className="text-center text-xl font-bold">Evidence Data Visualization</h1>
+      <ForceGraph data={formattedData} selectedId="032" />
+    </main>
   );
 }

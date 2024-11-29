@@ -1,0 +1,850 @@
+{
+    "001": {
+        "about": "Chronological Fragment with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Chronological Fragment",
+                "value": 0.15
+            },
+            "material": {
+                "name": "Film Specimen",
+                "value": 0.12
+            },
+            "structural": {
+                "name": "Grid Analysis A",
+                "value": 0.15
+            },
+            "emergent": {
+                "name": "Echo Pattern",
+                "value": 0.12
+            }
+        },
+        "name": "001",
+        "id": "001"
+    },
+    "002": {
+        "about": "Present State Record with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Present State Record",
+                "value": 0.1
+            },
+            "material": {
+                "name": "Digital Residue",
+                "value": 0.15
+            },
+            "structural": {
+                "name": "Void Formation",
+                "value": 0.1
+            },
+            "emergent": {
+                "name": "Matrix Evidence",
+                "value": 0.12
+            }
+        },
+        "name": "002",
+        "id": "002"
+    },
+    "003": {
+        "about": "Linear Time Data with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Linear Time Data",
+                "value": 0.1
+            },
+            "material": {
+                "name": "Chemical Trace",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Pattern Disorder",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Horizon Document",
+                "value": 0.1
+            }
+        },
+        "name": "003",
+        "id": "003"
+    },
+    "004": {
+        "about": "Time Spiral with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Time Spiral",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Mixed Medium Sample",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Field Disruption",
+                "value": 0.1
+            },
+            "emergent": {
+                "name": "Liminal Evidence",
+                "value": 0.05
+            },
+            "fibonacci": {
+                "name": "Primary Golden Ratio",
+                "value": 0.02
+            }
+        },
+        "name": "004",
+        "id": "004"
+    },
+    "005": {
+        "about": "Archive Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Archive Timeline",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Density Record",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "System Decay",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Data Flow",
+                "value": 0.1
+            }
+        },
+        "name": "005",
+        "id": "005"
+    },
+    "006": {
+        "about": "Horizon Chronology with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Horizon Chronology",
+                "value": 0.12
+            },
+            "material": {
+                "name": "Atmospheric Sample",
+                "value": 0.1
+            },
+            "structural": {
+                "name": "Linear Analysis",
+                "value": 0.12
+            },
+            "emergent": {
+                "name": "Cloud Formation",
+                "value": 0.15
+            }
+        },
+        "name": "006",
+        "id": "006"
+    },
+    "007": {
+        "about": "Spectrum Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Spectrum Timeline",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Digital Prism",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Quantum Trace",
+                "value": 0.03
+            },
+            "emergent": {
+                "name": "Rainbow Pattern",
+                "value": 0.05
+            }
+        },
+        "name": "007",
+        "id": "007"
+    },
+    "008": {
+        "about": "Terrain Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Terrain Timeline",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Geological Sample",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Landscape Grid",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Mountain Data",
+                "value": 0.1
+            }
+        },
+        "name": "008",
+        "id": "008"
+    },
+    "009": {
+        "about": "Lunar Time Measure with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Lunar Time Measure",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Ethereal Matter",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Void Structure",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Celestial Pattern",
+                "value": 0.05
+            },
+            "fibonacci": {
+                "name": "Golden Spiral",
+                "value": 0.05
+            }
+        },
+        "name": "009",
+        "id": "009"
+    },
+    "010": {
+        "about": "Code Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Code Timeline",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Chromatic Sample",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Document Pattern",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Signal Evidence",
+                "value": 0.08
+            }
+        },
+        "name": "010",
+        "id": "010"
+    },
+    "011": {
+        "about": "Void Memory with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Void Memory",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Mist Formation",
+                "value": 0.12
+            },
+            "structural": {
+                "name": "Spatial Analysis",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Negative Space Data",
+                "value": 0.05
+            }
+        },
+        "name": "011",
+        "id": "011"
+    },
+    "012": {
+        "about": "Desert Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Desert Timeline",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Mineral Sample",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Parallel Structure",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Terrain Pattern",
+                "value": 0.1
+            }
+        },
+        "name": "012",
+        "id": "012"
+    },
+    "013": {
+        "about": "Linear Archive with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Linear Archive",
+                "value": 0.1
+            },
+            "material": {
+                "name": "Geological Record",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Data Topology",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Memory Trace",
+                "value": 0.08
+            }
+        },
+        "name": "013",
+        "id": "013"
+    },
+    "014": {
+        "about": "Horizon Void with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Horizon Void",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Shadow Matter",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Quantum Field",
+                "value": 0.03
+            },
+            "emergent": {
+                "name": "Cosmic Evidence",
+                "value": 0.05
+            }
+        },
+        "name": "014",
+        "id": "014"
+    },
+    "015": {
+        "about": "Fragment Record with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Fragment Record",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Mountain Sample",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Spatial Memory",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Dawn Pattern",
+                "value": 0.08
+            }
+        },
+        "name": "015",
+        "id": "015"
+    },
+    "016": {
+        "about": "Data Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Data Timeline",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Light Artifact",
+                "value": 0.02
+            },
+            "structural": {
+                "name": "Code Structure",
+                "value": 0.05
+            },
+            "emergent": {
+                "name": "Color Evidence",
+                "value": 0.08
+            }
+        },
+        "name": "016",
+        "id": "016"
+    },
+    "017": {
+        "about": "Binary Anomaly with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Binary Anomaly",
+                "value": 0.02
+            },
+            "material": {
+                "name": "Lunar Matter",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Portal Analysis",
+                "value": 0.02
+            },
+            "emergent": {
+                "name": "Dual Reality",
+                "value": 0.05
+            }
+        },
+        "name": "017",
+        "id": "017"
+    },
+    "018": {
+        "about": "Wave Memory with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Wave Memory",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Fluid Sample",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Time Distortion",
+                "value": 0.02
+            },
+            "emergent": {
+                "name": "Path Evidence",
+                "value": 0.08
+            }
+        },
+        "name": "018",
+        "id": "018"
+    },
+    "019": {
+        "about": "Static Record with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Static Record",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Void Matter",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Vertical Pattern",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Light Fragment",
+                "value": 0.08
+            }
+        },
+        "name": "019",
+        "id": "019"
+    },
+    "020": {
+        "about": "Horizon Archive with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Horizon Archive",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Field Sample",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Edge Analysis",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Cloud Data",
+                "value": 0.1
+            }
+        },
+        "name": "020",
+        "id": "020"
+    },
+    "021": {
+        "about": "Spectrum Record with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Spectrum Record",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Rainbow Matter",
+                "value": 0.03
+            },
+            "structural": {
+                "name": "Color Structure",
+                "value": 0.05
+            },
+            "emergent": {
+                "name": "Prism Pattern",
+                "value": 0.05
+            }
+        },
+        "name": "021",
+        "id": "021"
+    },
+    "022": {
+        "about": "Fade Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Fade Timeline",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Mist Gradient",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Horizontal Field",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Desert Void",
+                "value": 0.08
+            }
+        },
+        "name": "022",
+        "id": "022"
+    },
+    "023": {
+        "about": "Data Horizon with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Data Horizon",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Spectral Sample",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Quantum Grid",
+                "value": 0.03
+            },
+            "emergent": {
+                "name": "Color Stream",
+                "value": 0.08
+            }
+        },
+        "name": "023",
+        "id": "023"
+    },
+    "024": {
+        "about": "Lunar Drift with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Lunar Drift",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Desert Matter",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Spatial Section",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Moon Anomaly",
+                "value": 0.03
+            }
+        },
+        "name": "024",
+        "id": "024"
+    },
+    "025": {
+        "about": "Earth Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Earth Timeline",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Native Sample",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Measure Grid",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Desert Pattern",
+                "value": 0.08
+            }
+        },
+        "name": "025",
+        "id": "025"
+    },
+    "026": {
+        "about": "Wave Record with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Wave Record",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Terra Matter",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Curve Analysis",
+                "value": 0.05
+            },
+            "emergent": {
+                "name": "Mountain Trace",
+                "value": 0.08
+            },
+            "fibonacci": {
+                "name": "Golden Spiral",
+                "value": 0.05
+            }
+        },
+        "name": "026",
+        "id": "026"
+    },
+    "027": {
+        "about": "Horizon State with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Horizon State",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Ethereal Sample",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Vertical Field",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Sky Void",
+                "value": 0.05
+            }
+        },
+        "name": "027",
+        "id": "027"
+    },
+    "028": {
+        "about": "Linear Sequence with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Linear Sequence",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Mineral Light",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Gradient Pattern",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Dawn Spectrum",
+                "value": 0.05
+            }
+        },
+        "name": "028",
+        "id": "028"
+    },
+    "029": {
+        "about": "Color Timeline with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Color Timeline",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Pixel Structure",
+                "value": 0.03
+            },
+            "structural": {
+                "name": "Digital Field",
+                "value": 0.05
+            },
+            "emergent": {
+                "name": "Circuit Evidence",
+                "value": 0.03
+            }
+        },
+        "name": "029",
+        "id": "029"
+    },
+    "030": {
+        "about": "Desert Record with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Desert Record",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Ancient Matter",
+                "value": 0.03
+            },
+            "structural": {
+                "name": "Data Ridge",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Earth Code",
+                "value": 0.05
+            }
+        },
+        "name": "030",
+        "id": "030"
+    },
+    "031": {
+        "about": "Code Archive with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Code Archive",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Data Sample",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Vertical Flow",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Cloud Matrix",
+                "value": 0.05
+            }
+        },
+        "name": "031",
+        "id": "031"
+    },
+    "032": {
+        "about": "Spectrum Anomaly with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Spectrum Anomaly",
+                "value": 0.02
+            },
+            "material": {
+                "name": "Orbital Matter",
+                "value": 0.02
+            },
+            "structural": {
+                "name": "Diagonal Pattern",
+                "value": 0.05
+            },
+            "emergent": {
+                "name": "Nebula Formation",
+                "value": 0.02
+            },
+            "fibonacci": {
+                "name": "Fibonacci Sequence",
+                "value": 0.02
+            }
+        },
+        "name": "032",
+        "id": "032"
+    },
+    "033": {
+        "about": "Memory Fragment with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Memory Fragment",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Human Trace",
+                "value": 0.02
+            },
+            "structural": {
+                "name": "Color Field",
+                "value": 0.05
+            },
+            "emergent": {
+                "name": "Ghost Pattern",
+                "value": 0.02
+            }
+        },
+        "name": "033",
+        "id": "033"
+    },
+    "034": {
+        "about": "Light Archive with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Light Archive",
+                "value": 0.05
+            },
+            "material": {
+                "name": "Amber Sample",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Horizon Grid",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Dawn Trace",
+                "value": 0.08
+            }
+        },
+        "name": "034",
+        "id": "034"
+    },
+    "035": {
+        "about": "Void Echo with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Void Echo",
+                "value": 0.08
+            },
+            "material": {
+                "name": "Mist Field",
+                "value": 0.08
+            },
+            "structural": {
+                "name": "Edge Pattern",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Infinite Space",
+                "value": 0.02
+            },
+            "fibonacci": {
+                "name": "Double Golden Points",
+                "value": 0.05
+            }
+        },
+        "name": "035",
+        "id": "035"
+    },
+    "036": {
+        "about": "Time Strata with intricate relationships across multiple dimensions.",
+        "traits": {
+            "temporal": {
+                "name": "Time Strata",
+                "value": 0.02
+            },
+            "material": {
+                "name": "Cloud Matter",
+                "value": 0.05
+            },
+            "structural": {
+                "name": "Linear Archive",
+                "value": 0.08
+            },
+            "emergent": {
+                "name": "Cosmic Field",
+                "value": 0.03
+            }
+        },
+        "name": "036",
+        "id": "036"
+    }
+}
