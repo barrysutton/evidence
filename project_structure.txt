@@ -1,0 +1,40 @@
+.
+├── README.md
+├── app
+│   ├── favicon.ico
+│   ├── fonts
+│   │   ├── GeistMonoVF.woff
+│   │   └── GeistVF.woff
+│   ├── forcegraph.js
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── categories-traits.csv
+├── data
+│   ├── add_id_field.py
+│   ├── arweave_urls.json
+│   ├── csvjson.json
+│   ├── evidence.json
+│   ├── extract_arweave_urls.py
+│   └── update_json_names.py
+├── fixJSON.js
+├── formatData.js
+├── generate_json.py
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── processCSV.js
+├── project_structure.txt
+├── public
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── tailwind.config.ts
+├── tsconfig.json
+└── utils
+    └── formatData.js
+
+6 directories, 32 files
