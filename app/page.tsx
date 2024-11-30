@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import evidenceData from "../data/evidence.json";
+import { calculateMetrics, calculateCollectionRank, calculateDataAnalysis } from "../utils/metrics";
 
 type EvidenceTraits = {
   name: string;
@@ -20,6 +22,72 @@ type EvidencePiece = {
   };
   relatedPieces?: { id: string; similarity: number }[];
   imageUrl: string;
+};
+
+const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
+  const [searchValue, setSearchValue] = useState(currentPiece);
+
+  const formatPieceNumber = (num) => {
+    return String(num).padStart(3, '0');
+  };
+
+  const handlePrevious = () => {
+    const prevNum = Math.max(1, parseInt(currentPiece) - 1);
+    const formattedNum = formatPieceNumber(prevNum);
+    onPieceSelect(formattedNum);
+    setSearchValue(formattedNum);
+  };
+
+  const handleNext = () => {
+    const nextNum = Math.min(36, parseInt(currentPiece) + 1);
+    const formattedNum = formatPieceNumber(nextNum);
+    onPieceSelect(formattedNum);
+    setSearchValue(formattedNum);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    let num = parseInt(searchValue);
+    if (num >= 1 && num <= 36) {
+      const formattedNum = formatPieceNumber(num);
+      onPieceSelect(formattedNum);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.target.value.replace(/\D/g, '');
+    setSearchValue(value);
+  };
+
+  return (
+    <div className="flex items-center space-x-2 w-32 mt-2">
+      <button
+        onClick={handlePrevious}
+        className="text-white hover:text-gray-400"
+        aria-label="Previous piece"
+      >
+        <ChevronLeft className="w-4 h-4" />
+      </button>
+
+      <form onSubmit={handleSearch} className="flex-1">
+        <input
+          type="text"
+          value={searchValue}
+          onChange={handleInputChange}
+          className="w-full px-2 py-1 text-center bg-black border border-gray-700 text-white font-light text-sm focus:outline-none focus:border-gray-500"
+          maxLength="3"
+        />
+      </form>
+
+      <button
+        onClick={handleNext}
+        className="text-white hover:text-gray-400"
+        aria-label="Next piece"
+      >
+        <ChevronRight className="w-4 h-4" />
+      </button>
+    </div>
+  );
 };
 
 const EvidencePage = () => {
@@ -46,6 +114,10 @@ const EvidencePage = () => {
           <div className="text-2xl font-light tracking-wider">
             EVIDENCE #{currentPiece}
           </div>
+          <PieceNavigator 
+            currentPiece={currentPiece}
+            onPieceSelect={setPiece}
+          />
         </div>
 
         {/* Middle Column */}
@@ -57,38 +129,39 @@ const EvidencePage = () => {
         </div>
 
         {/* Key Metrics */}
-<div className="col-span-3">
-  <h2 className="text-sm font-light tracking-widest text-gray-400 mb-4">
-    KEY METRICS
-  </h2>
-  <div className="space-y-2">
-    <div className="flex justify-between text-sm">
-      <span className="text-gray-400">Rarity Rank</span>
-      <span>#1 of {Object.keys(evidenceData).length}</span> {/* Total pieces */}
-    </div>
-    <div className="flex justify-between text-sm">
-      <span className="text-gray-400">Ultra-rare Traits</span>
-      <span>
-        {
-          Object.values(piece.traits).filter(
-            (trait) => trait.value <= 0.02
-          ).length
-        }
-      </span>
-    </div>
-    <div className="flex justify-between text-sm">
-      <span className="text-gray-400">Combined Rarity</span>
-      <span>
-        {(
-          Object.values(piece.traits).reduce(
-            (acc, trait) => acc * (trait.value || 1),
-            1
-          ) * 100
-        ).toFixed(5)}%
-      </span>
-    </div>
-  </div>
-</div>
+        <div className="col-span-3">
+          <h2 className="text-sm font-light tracking-widest text-gray-400 mb-4">
+            KEY METRICS
+          </h2>
+          <div className="space-y-2">
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-400">Rarity Rank</span>
+              <span>#1 of {Object.keys(evidenceData).length}</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-400">Ultra-rare Traits</span>
+              <span>
+                {
+                  Object.values(piece.traits).filter(
+                    (trait) => trait.value <= 0.02
+                  ).length
+                }
+              </span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-gray-400">Combined Rarity</span>
+              <span>
+                {(
+                  Object.values(piece.traits).reduce(
+                    (acc, trait) => acc * (trait.value || 1),
+                    1
+                  ) * 100
+                ).toFixed(5)}%
+              </span>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Section */}
         <div className="col-span-12 grid grid-cols-12 gap-8">
           {/* Categories & Traits (Left) */}
