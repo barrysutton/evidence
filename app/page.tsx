@@ -4,6 +4,8 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import evidenceData from "../data/evidence.json";
 import { calculateMetrics, calculateCollectionRank, calculateDataAnalysis } from "../utils/metrics";
+import { calculateRarityBreakdown, calculateCategoryDistribution } from "../utils/metrics";
+import { calculateSharedTraits } from "../utils/metrics";
 
 type EvidenceTraits = {
   name: string;
@@ -134,10 +136,12 @@ const EvidencePage = () => {
             KEY METRICS
           </h2>
           <div className="space-y-2">
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Rarity Rank</span>
-              <span>#1 of {Object.keys(evidenceData).length}</span>
-            </div>
+          <div className="flex justify-between text-sm">
+  <span className="text-gray-400">Rarity Rank</span>
+  <span>
+    {calculateCollectionRank(currentPiece, evidenceData)}
+  </span>
+</div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-400">Ultra-rare Traits</span>
               <span>
@@ -190,17 +194,64 @@ const EvidencePage = () => {
             <div className="aspect-square bg-gray-900 bg-opacity-20"></div>
           </div>
 
-          {/* Data Analysis (Right) */}
-          <div className="col-span-3 space-y-8">
-            <h2 className="text-sm font-light tracking-widest text-gray-400">
-              DATA ANALYSIS
-            </h2>
-            <div className="space-y-4">
-              <div className="h-32 bg-gray-900 bg-opacity-20"></div>
-              <div className="h-32 bg-gray-900 bg-opacity-20"></div>
-              <div className="h-32 bg-gray-900 bg-opacity-20"></div>
-            </div>
+          {/* Data Analysis Section */}
+<div className="col-span-3 space-y-8">
+  <h2 className="text-sm font-light tracking-widest text-gray-400">
+    DATA ANALYSIS
+  </h2>
+
+  {/* Rarity Breakdown */}
+  <div className="space-y-4">
+    <h3 className="text-xs font-light tracking-widest text-gray-400">
+      RARITY BREAKDOWN
+    </h3>
+    <div className="text-sm space-y-2">
+      {Object.entries(calculateRarityBreakdown(piece)).map(([rarity, count]) => (
+        <div className="flex justify-between" key={rarity}>
+          <span className="capitalize text-gray-400">{rarity}</span>
+          <span>{count}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Related Pieces */}
+  <div className="space-y-4">
+    <h3 className="text-xs font-light tracking-widest text-gray-400">
+      RELATED PIECES
+    </h3>
+    <div className="space-y-2">
+      {piece.relatedPieces.map((related: any) => (
+        <div
+          key={related}
+          className="flex justify-between text-sm bg-gray-900 bg-opacity-20 p-2"
+        >
+          <span>#{related}</span>
+          <span className="text-gray-400">
+            {evidenceData[related]?.traits?.length || 0} shared traits
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Category Distribution */}
+  <div className="space-y-4">
+    <h3 className="text-xs font-light tracking-widest text-gray-400">
+      CATEGORY DISTRIBUTION
+    </h3>
+    <div className="text-sm space-y-2">
+      {Object.entries(calculateCategoryDistribution(piece)).map(
+        ([category, percentage]) => (
+          <div className="flex justify-between" key={category}>
+            <span className="capitalize text-gray-400">{category}</span>
+            <span>{percentage.toFixed(2)}%</span>
           </div>
+        )
+      )}
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </main>
