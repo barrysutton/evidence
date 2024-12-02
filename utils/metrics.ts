@@ -11,43 +11,52 @@ type Traits = {
   };
 // Calculate Ultra-rare Traits and Combined Rarity
 export function calculateMetrics(pieceData: any) {
-    // Calculate Ultra-rare Traits
-    const ultraRareTraits = Object.values(pieceData.traits || {})
-      .filter((trait: any) => trait.value === 0.02)
-      .length;
-  
-    // Calculate Combined Rarity
-    const combinedRarity = Object.values(pieceData.traits || {})
-      .reduce((acc: number, trait: any) => acc * trait.value, 1);
-  
-    return {
-      ultraRareTraits,
-      combinedRarity: (combinedRarity * 100).toFixed(6) + "%",
-    };
-  }
-  // Calculate Rarity Breakdown
-export function calculateRarityBreakdown(pieceData: any) {
-  const rarityCounts = {
-    ultraRare: 0,
-    rare: 0,
-    uncommon: 0,
-    common: 0,
+  const ultraRareTraits = Object.values(pieceData.traits || {})
+    .filter((trait: any) => trait.value === 0.02)
+    .length;
+
+  console.log("Ultra Rare Traits:", ultraRareTraits); // Added log
+
+  const combinedRarity = Object.values(pieceData.traits || {})
+    .reduce((acc: number, trait: any) => acc * trait.value, 1);
+
+  console.log("Combined Rarity:", combinedRarity); // Added log
+
+  return {
+    ultraRareTraits,
+    combinedRarity: (combinedRarity * 100).toFixed(6) + "%",
   };
-
-  Object.values(pieceData.traits || {}).forEach((trait: any) => {
-    if (trait.value <= 0.02) rarityCounts.ultraRare++;
-    else if (trait.value <= 0.05) rarityCounts.rare++;
-    else if (trait.value <= 0.08) rarityCounts.uncommon++;
-    else rarityCounts.common++;
-  });
-
-  return rarityCounts;
 }
+  // Calculate Rarity Breakdown
+  export function calculateRarityBreakdown(pieceData: PieceData) {
+    const rarityCounts = {
+      ultraRare: 0,
+      rare: 0,
+      uncommon: 0,
+      common: 0,
+    };
+  
+    Object.values(pieceData.traits || {}).forEach((trait: { name: string; value: number }) => {
+      if (trait.value === 0.02) {
+        rarityCounts.ultraRare++;
+      } else if (trait.value === 0.05) {
+        rarityCounts.rare++;
+      } else if (trait.value === 0.08) {
+        rarityCounts.uncommon++;
+      } else {
+        rarityCounts.common++;
+      }
+    });
+  
+    console.log("Rarity Breakdown:", rarityCounts); // Added log for debugging
+  
+    return rarityCounts;
+  }
 
 // Calculate Category Distribution
 export function calculateCategoryDistribution(pieceData: any) {
   const totalTraits = Object.values(pieceData.traits || {}).length;
-  const distribution = {};
+  const distribution: { [key: string]: number } = {}; // Explicit type for the object
 
   Object.entries(pieceData.traits || {}).forEach(([category, trait]: any) => {
     distribution[category] = (trait.value / totalTraits) * 100;
@@ -56,31 +65,28 @@ export function calculateCategoryDistribution(pieceData: any) {
   return distribution;
 }
   // Calculate Collection Rank
-  export function calculateCollectionRank(
-    pieceId: string,
-    allPieceData: { [id: string]: PieceData }
-  ) {
-    const piecesWithMetrics = Object.entries(allPieceData).map(([id, data]) => ({
-      id,
-      ultraRareTraits: Object.values(data.traits).filter(
-        (trait) => trait.value <= 0.02
-      ).length,
-      combinedRarity: Object.values(data.traits).reduce(
-        (acc: number, trait) => acc * trait.value,
-        1
-      ),
+ export function calculateCollectionRank(
+  pieceId: string,
+  allPieceData: { [id: string]: PieceData }
+) {
+    const piecesWithMetrics = Object.entries(allPieceData).map(([id, data]: [string, PieceData]) => ({
+        id,
+        ultraRareTraits: Object.values(data.traits || {} as Traits).filter((trait) => trait.value <= 0.02).length,
+        combinedRarity: Object.values(data.traits || {} as Traits).reduce((acc, trait) => acc * trait.value, 1),
     }));
-  
+
+    console.log("Pieces With Metrics:", piecesWithMetrics); // Added log
+
     piecesWithMetrics.sort((a, b) => {
       if (b.ultraRareTraits !== a.ultraRareTraits) {
         return b.ultraRareTraits - a.ultraRareTraits;
       }
-      return a.combinedRarity - b.combinedRarity;
+      return b.combinedRarity - a.combinedRarity; // Sort combined rarity from highest to lowest
     });
-  
+
     const rank = piecesWithMetrics.findIndex((p) => p.id === pieceId) + 1;
     return `#${rank} of ${piecesWithMetrics.length}`;
-  }
+}
   export function calculateSharedTraits(
     currentTraits: Record<string, { name: string; value: number }>,
     relatedTraits: Record<string, { name: string; value: number }>
@@ -93,6 +99,22 @@ export function calculateCategoryDistribution(pieceData: any) {
       }
       return count;
     }, 0);
+  }
+  export function computeTraitsInCommon(pieceA: any, pieceB: any) {
+    if (!pieceA.traits || !pieceB.traits) return 0;
+  
+    let traitsInCommon = 0;
+  
+    Object.keys(pieceA.traits).forEach((traitKey) => {
+      const traitA = pieceA.traits[traitKey];
+      const traitB = pieceB.traits[traitKey];
+  
+      if (traitA && traitB && traitA.name === traitB.name && traitA.value === traitB.value) {
+        traitsInCommon++;
+      }
+    });
+  
+    return traitsInCommon;
   }
   //sample data test
   const sampleData = {

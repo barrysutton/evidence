@@ -3,9 +3,15 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import evidenceData from "../data/evidence.json";
-import { calculateMetrics, calculateCollectionRank, calculateDataAnalysis } from "../utils/metrics";
-import { calculateRarityBreakdown, calculateCategoryDistribution } from "../utils/metrics";
-import { calculateSharedTraits } from "../utils/metrics";
+import {
+  calculateMetrics,
+  calculateCollectionRank,
+  calculateDataAnalysis,
+  calculateRarityBreakdown,
+  calculateCategoryDistribution,
+  calculateSharedTraits,
+  computeTraitsInCommon,
+} from "../utils/metrics";
 
 type EvidenceTraits = {
   name: string;
@@ -142,16 +148,12 @@ const EvidencePage = () => {
     {calculateCollectionRank(currentPiece, evidenceData)}
   </span>
 </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-400">Ultra-rare Traits</span>
-              <span>
-                {
-                  Object.values(piece.traits).filter(
-                    (trait) => trait.value <= 0.02
-                  ).length
-                }
-              </span>
-            </div>
+<div className="flex justify-between text-sm">
+  <span className="text-gray-400">UltraRare Traits</span>
+  <span>
+    {calculateMetrics(piece).ultraRareTraits}
+  </span>
+</div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-400">Combined Rarity</span>
               <span>
@@ -215,25 +217,25 @@ const EvidencePage = () => {
     </div>
   </div>
 
-  {/* Related Pieces */}
-  <div className="space-y-4">
-    <h3 className="text-xs font-light tracking-widest text-gray-400">
-      RELATED PIECES
-    </h3>
-    <div className="space-y-2">
-      {piece.relatedPieces.map((related: any) => (
-        <div
-          key={related}
-          className="flex justify-between text-sm bg-gray-900 bg-opacity-20 p-2"
-        >
-          <span>#{related}</span>
-          <span className="text-gray-400">
-            {evidenceData[related]?.traits?.length || 0} shared traits
-          </span>
-        </div>
-      ))}
-    </div>
+{/* Related Pieces */}
+<div className="space-y-4">
+  <h3 className="text-xs font-light tracking-widest text-gray-400">
+    RELATED PIECES
+  </h3>
+  <div className="space-y-2">
+    {piece.relatedPieces.map((related: any) => (
+      <div
+        key={related}
+        className="flex justify-between text-sm bg-gray-900 bg-opacity-20 p-2"
+      >
+        <span>#{related}</span>
+        <span className="text-gray-400">
+          {computeTraitsInCommon(piece, evidenceData[related])} shared traits
+        </span>
+      </div>
+    ))}
   </div>
+</div>
 
   {/* Category Distribution */}
   <div className="space-y-4">
