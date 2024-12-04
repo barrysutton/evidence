@@ -12,6 +12,19 @@ import {
 } from "../utils/metrics";
 import Image from "next/image";
 
+// Add this right after your imports
+interface Trait {
+  name: string;
+  value: number;
+}
+
+interface Piece {
+  imageUrl: string;
+  traits: Record<string, Trait>;
+  about: string;
+  relatedPieces: string[]; // or number[] if your IDs are numbers
+}
+
 const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
   const [searchValue, setSearchValue] = useState(currentPiece);
 
@@ -227,7 +240,7 @@ const EvidencePage = () => {
     RELATED PIECES
   </h3>
   <div className="text-sm mt-2 space-y-1"> {/* Adjusted from space-y-2 to space-y-1 */}
-    {piece.relatedPieces.map((related: any) => (
+  {piece.relatedPieces.map((related) => (
       <div
         key={related}
         className="flex justify-between text-sm bg-gray-900 bg-opacity-20"
