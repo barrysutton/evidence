@@ -240,7 +240,7 @@ const EvidencePage = () => {
     RELATED PIECES
   </h3>
   <div className="text-sm mt-2 space-y-1"> {/* Adjusted from space-y-2 to space-y-1 */}
-  {piece.relatedPieces.map((related) => (
+  {piece.relatedPieces.map((related: string) => (
       <div
         key={related}
         className="flex justify-between text-sm bg-gray-900 bg-opacity-20"
