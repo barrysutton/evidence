@@ -12,6 +12,26 @@ import {
 } from "../utils/metrics";
 import Image from "next/image";
 
+interface EvidenceData {
+  [key: string]: Piece;
+}
+interface EvidenceDataType {
+  [key: string]: {
+      id: string;
+      about: string;
+      traits: {
+          temporal: { name: string; value: number };
+          material: { name: string; value: number };
+          structural: { name: string; value: number };
+          emergent: { name: string; value: number };
+          fibonacci: { name: string; value: number };
+      };
+      series: never[];
+      imageUrl: string;
+      relatedPieces: string[];
+  }
+}
+
 // Add this right after your imports
 interface Trait {
   name: string;
@@ -24,13 +44,19 @@ interface Piece {
   about: string;
   relatedPieces: string[]; // or number[] if your IDs are numbers
 }
+interface PieceNavigatorProps {
+  currentPiece: string;
+  onPieceSelect: (piece: string) => void;
+}
 
-const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
+const formatPieceNumber = (num: number): string => {
+  return String(num).padStart(3, '0');
+};
+
+const PieceNavigator = ({ currentPiece, onPieceSelect }: PieceNavigatorProps) => {
   const [searchValue, setSearchValue] = useState(currentPiece);
 
-  const formatPieceNumber = (num) => {
-    return String(num).padStart(3, '0');
-  };
+
 
   const handlePrevious = () => {
     const prevNum = Math.max(1, parseInt(currentPiece) - 1);
@@ -46,7 +72,7 @@ const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
     setSearchValue(formattedNum);
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const num = parseInt(searchValue);
     if (num >= 1 && num <= 36) {
@@ -74,7 +100,7 @@ const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
             onChange={(e) => setSearchValue(e.target.value.replace(/\D/g, ""))}
             placeholder="Enter Number"
             className="w-full px-2 py-2 text-center bg-black border border-gray-700 text-white font-light text-sm focus:outline-none focus:border-gray-500"
-            maxLength="6"
+            maxLength={6}
           />
     
           {/* Dropdown List */}
@@ -114,7 +140,7 @@ const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
 
 const EvidencePage = () => {
   const [currentPiece, setPiece] = useState("001");
-  const piece = evidenceData[currentPiece];
+  const piece = (evidenceData as any)[currentPiece] as Piece;
 
   if (!piece) return <div>Error: Piece not found</div>;
 
@@ -122,11 +148,15 @@ const EvidencePage = () => {
     <main className="min-h-screen bg-black text-white px-8">
       {/* Header */}
       <header className="bg-black flex justify-center py-8">
-        <img
-          src="/logo-primordium-white.png"
-          alt="Site Logo"
-          className="h-12 w-auto"
-        />
+      <Image
+  src="/logo-primordium-white.png"
+  alt="Site Logo"
+  width={212}    // 48 * (5943/1347) ≈ 212
+  height={48}    // matches your h-12 class
+  className="h-12 w-auto"
+  quality={100}  // maximum quality
+  priority       // tells Next.js to load this image first
+/>
       </header>
 
       <div className="grid gap-8 p-4 max-w-[2000px] mx-auto sm:grid-cols-12">
@@ -247,7 +277,7 @@ const EvidencePage = () => {
       >
         <span>#{related}</span>
         <span className="text-gray-400">
-          {computeTraitsInCommon(piece, evidenceData[related])} shared traits
+        {computeTraitsInCommon(piece, (evidenceData as any)[related])} shared traits
         </span>
       </div>
     ))}
