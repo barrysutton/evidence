@@ -48,57 +48,57 @@ const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
 
   return (
     <div className="flex items-center justify-center w-full mt-4">
-    <div className="flex items-center w-full max-w-md space-x-2">
-      {/* Previous Button */}
-      <button
-        onClick={handlePrevious}
-        className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700"
-        aria-label="Previous piece"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-  
-      {/* Search Bar */}
-      <form onSubmit={handleSearch} className="flex-1 relative">
-        <input
-          type="text"
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value.replace(/\D/g, ""))}
-          placeholder="Enter Number"
-          className="w-full px-2 py-2 text-center bg-black border border-gray-700 text-white font-light text-sm focus:outline-none focus:border-gray-500"
-          maxLength="6"
-        />
-  
-        {/* Dropdown List */}
-        <select
-          value={searchValue}
-          onChange={(e) => {
-            const selectedValue = e.target.value;
-            setSearchValue(selectedValue); // Update the input field
-            onPieceSelect(selectedValue); // Navigate to the selected piece
-          }}
-          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+      <div className="flex items-center w-full max-w-md space-x-2">
+        {/* Previous Button */}
+        <button
+          onClick={handlePrevious}
+          className="text-gray-400 hover:text-white p-2 focus:outline-none"
+          aria-label="Previous piece"
         >
-          <option value="" disabled>Select a number</option>
-          {[...Array(36).keys()].map((num) => {
-            const formattedNum = String(num + 1).padStart(3, "0");
-            return (
-              <option key={formattedNum} value={formattedNum}>
-                {formattedNum}
-              </option>
-            );
-          })}
-        </select>
-      </form>
-  
-      {/* Next Button */}
-      <button
-        onClick={handleNext}
-        className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700"
-        aria-label="Next piece"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+    
+        {/* Search Bar */}
+        <form onSubmit={handleSearch} className="flex-1 relative">
+          <input
+            type="text"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value.replace(/\D/g, ""))}
+            placeholder="Enter Number"
+            className="w-full px-2 py-2 text-center bg-black border border-gray-700 text-white font-light text-sm focus:outline-none focus:border-gray-500"
+            maxLength="6"
+          />
+    
+          {/* Dropdown List */}
+          <select
+            value={searchValue}
+            onChange={(e) => {
+              const selectedValue = e.target.value;
+              setSearchValue(selectedValue); // Update the input field
+              onPieceSelect(selectedValue); // Navigate to the selected piece
+            }}
+            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+          >
+            <option value="" disabled>Select a number</option>
+            {[...Array(36).keys()].map((num) => {
+              const formattedNum = String(num + 1).padStart(3, "0");
+              return (
+                <option key={formattedNum} value={formattedNum}>
+                  {formattedNum}
+                </option>
+              );
+            })}
+          </select>
+        </form>
+    
+        {/* Next Button */}
+        <button
+          onClick={handleNext}
+          className="text-gray-400 hover:text-white p-2 focus:outline-none"
+          aria-label="Next piece"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
     </div>
   </div>
   );
@@ -111,7 +111,7 @@ const EvidencePage = () => {
   if (!piece) return <div>Error: Piece not found</div>;
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white px-8">
       {/* Header */}
       <header className="bg-black flex justify-center py-8">
         <img
@@ -122,12 +122,12 @@ const EvidencePage = () => {
       </header>
 
       <div className="grid gap-8 p-4 max-w-[2000px] mx-auto sm:grid-cols-12">
-  {/* Main Image */}
-  <div className="col-span-full sm:col-span-3">
+ {/* Main Image */}
+<div className="col-span-full sm:col-span-4">
     <img
-      src={piece.imageUrl}
-      alt={`Evidence ${currentPiece}`}
-      className="w-full h-auto object-cover"
+        src={piece.imageUrl}
+        alt={`Evidence ${currentPiece}`}
+        className="w-full h-auto object-cover"
     />
     <div className="text-center mt-4">
       <h1 className="text-l font-light tracking-wider">EVIDENCE #{currentPiece}</h1>
@@ -148,18 +148,28 @@ const EvidencePage = () => {
   </div>
 
   {/* About This Work */}
-  <section className="col-span-full sm:col-span-6">
+  <section className="col-span-full sm:col-span-5">
     <h2 className="text-sm font-light tracking-widest text-gray-400">
       ABOUT THIS WORK
     </h2>
     <p className="text-sm leading-relaxed text-gray-300 mt-4">{piece.about}</p>
-    {/* Trait Visualization in the middle column */}
-    <div className="mt-8">
-      {/*<h2 className="text-sm font-light tracking-widest text-gray-400">
-        TRAIT VISUALIZATION
-      </h2>*/}
-      <div className="aspect-square bg-gray-900 bg-opacity-20 mt-4"></div>
-    </div>
+    {/* Secret Section */}
+<section className="col-span-full sm:col-span-5">
+  <h2 className="text-sm font-light tracking-widest text-gray-400 mt-8">
+    SECRET PHRASE
+  </h2>
+  <p className="text-sm leading-relaxed text-gray-300 mt-4 italic">
+    *Deeper insights into the creative process for this piece will be generated upon acquisition.
+  </p>
+</section>
+{/* Trait Visualization in the middle column */}
+<div className="hidden sm:block col-span-full sm:col-span-5 mt-8">
+  {/* Uncomment the title below if needed */}
+  {/* <h2 className="text-sm font-light tracking-widest text-gray-400">
+      TRAIT VISUALIZATION
+  </h2> */}
+  <div className="aspect-square bg-gray-900 bg-opacity-20 mt-4"></div>
+</div>
   </section>
 
   {/* Key Metrics and Data Analysis */}
