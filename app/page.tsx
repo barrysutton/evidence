@@ -140,7 +140,7 @@ const PieceNavigator = ({ currentPiece, onPieceSelect }: PieceNavigatorProps) =>
 
 const EvidencePage = () => {
   const [currentPiece, setPiece] = useState("001");
-  const piece = (evidenceData as any)[currentPiece] as Piece;
+  const piece = (evidenceData as EvidenceData)[currentPiece];
 
   if (!piece) return <div>Error: Piece not found</div>;
 
@@ -161,7 +161,7 @@ const EvidencePage = () => {
 
       <div className="grid gap-8 p-4 max-w-[2000px] mx-auto sm:grid-cols-12">
  {/* Main Image */}
- <div className="col-span-full sm:col-span-3">
+ <div className="col-span-full sm:col-span-4">
   <div className="relative w-full h-0 pb-[75%]">
     <Image
       src={piece.imageUrl}
