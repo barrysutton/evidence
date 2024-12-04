@@ -10,6 +10,7 @@ import {
   calculateCategoryDistribution,
   computeTraitsInCommon,
 } from "../utils/metrics";
+import Image from "next/image";
 
 const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
   const [searchValue, setSearchValue] = useState(currentPiece);
@@ -40,12 +41,6 @@ const PieceNavigator = ({ currentPiece, onPieceSelect }) => {
       onPieceSelect(formattedNum);
     }
   };
-
-  const handleInputChange = (e) => {
-    const value = e.target.value.replace(/\D/g, '');
-    setSearchValue(value);
-  };
-
   return (
     <div className="flex items-center justify-center w-full mt-4">
       <div className="flex items-center w-full max-w-md space-x-2">
@@ -123,12 +118,15 @@ const EvidencePage = () => {
 
       <div className="grid gap-8 p-4 max-w-[2000px] mx-auto sm:grid-cols-12">
  {/* Main Image */}
-<div className="col-span-full sm:col-span-4">
-    <img
-        src={piece.imageUrl}
-        alt={`Evidence ${currentPiece}`}
-        className="w-full h-auto object-cover"
+ <div className="col-span-full sm:col-span-3">
+  <div className="relative w-full h-0 pb-[75%]">
+    <Image
+      src={piece.imageUrl}
+      alt={`Evidence ${currentPiece}`}
+      fill
+      className="object-cover"
     />
+  </div>
     <div className="text-center mt-4">
       <h1 className="text-l font-light tracking-wider">EVIDENCE #{currentPiece}</h1>
       <PieceNavigator currentPiece={currentPiece} onPieceSelect={setPiece} />
