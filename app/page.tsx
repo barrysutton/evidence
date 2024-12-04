@@ -15,22 +15,7 @@ import Image from "next/image";
 interface EvidenceData {
   [key: string]: Piece;
 }
-interface EvidenceDataType {
-  [key: string]: {
-      id: string;
-      about: string;
-      traits: {
-          temporal: { name: string; value: number };
-          material: { name: string; value: number };
-          structural: { name: string; value: number };
-          emergent: { name: string; value: number };
-          fibonacci: { name: string; value: number };
-      };
-      series: never[];
-      imageUrl: string;
-      relatedPieces: string[];
-  }
-}
+
 
 // Add this right after your imports
 interface Trait {
