@@ -9,7 +9,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true,
+    "noEmit": false,
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
@@ -26,7 +26,8 @@
         "./*"
       ]
     },
-    "module": "esnext"
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "next-env.d.ts",

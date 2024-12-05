@@ -9,15 +9,15 @@ type PieceData = {
 };
 
 // Calculate Ultra-rare Traits and Combined Rarity
-export function calculateMetrics(pieceData: PieceData) {
+export function calculateMetrics(pieceData: any) {
   const ultraRareTraits = Object.values(pieceData.traits || {})
-    .filter((trait) => trait.value === 0.02)
+    .filter((trait: any) => trait.value === 0.02)
     .length;
 
   console.log("Ultra Rare Traits:", ultraRareTraits); // Added log
 
   const combinedRarity = Object.values(pieceData.traits || {})
-    .reduce((acc: number, trait) => acc * trait.value, 1);
+    .reduce((acc: number, trait: any) => acc * trait.value, 1);
 
   console.log("Combined Rarity:", combinedRarity); // Added log
 
