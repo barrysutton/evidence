@@ -9,10 +9,10 @@ type PieceData = {
 };
 
 // Calculate Ultra-rare Traits and Combined Rarity
-export function calculateMetrics(pieceData: any) {
+export function calculateMetrics(pieceData: { traits: Record<string, Trait> }) {
   const ultraRareTraits = Object.values(pieceData.traits || {})
-    .filter((trait: any) => trait.value === 0.02)
-    .length;
+    .filter((trait: Trait) => trait.value === 0.02)
+    .length; 
 
   console.log("Ultra Rare Traits:", ultraRareTraits); // Added log
 
