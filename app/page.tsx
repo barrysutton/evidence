@@ -8,7 +8,6 @@ import {
   calculateCollectionRank,
   calculateRarityBreakdown,
   calculateCategoryDistribution,
-  Trait,  // added this
 } from "../utils/metrics";
 import Image from "next/image";
 
