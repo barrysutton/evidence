@@ -136,11 +136,11 @@ const EvidencePage = () => {
       <Image
   src="/logo-primordium-white.png"
   alt="Site Logo"
-  width={212}    // 48 * (5943/1347) ≈ 212
-  height={48}    // matches your h-12 class
+  width={212}
+  height={48}
   className="h-12 w-auto"
-  quality={100}  // maximum quality
-  priority       // tells Next.js to load this image first
+  quality={100}
+  priority
 />
       </header>
 
