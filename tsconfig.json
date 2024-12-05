@@ -9,7 +9,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmitOnError": false,  // This allows the build even with TypeScript errors
+    "noEmitOnError": false, // This allows the build even with TypeScript errors
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
@@ -27,7 +27,8 @@
       ]
     },
     "module": "esnext",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true
   },
   "include": [
     "next-env.d.ts",
