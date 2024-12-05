@@ -17,13 +17,14 @@ export function calculateMetrics(pieceData: { traits: Record<string, Trait> }) {
   console.log("Ultra Rare Traits:", ultraRareTraits); // Added log
 
   const combinedRarity = Object.values(pieceData.traits || {})
-  .reduce((acc: number, trait: Trait) => acc * trait.value, 1);
+  .reduce((acc, trait) => acc * trait.value, 1);
+
 
   console.log("Combined Rarity:", combinedRarity); // Added log
 
   return {
     ultraRareTraits,
-    combinedRarity: (combinedRarity * 100).toFixed(6) + "%",
+    combinedRarity: `${(combinedRarity * 100).toFixed(6)}%`
   };
 }
 
