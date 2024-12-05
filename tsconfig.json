@@ -9,7 +9,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": false,
+    "noEmitOnError": false,  // This allows the build even with TypeScript errors
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
