@@ -1,8 +1,8 @@
 // Define the types for traits and piece data
-type Trait = {
+export interface Trait {
   name: string;
   value: number;
-};
+}
 
 type PieceData = {
   traits: { [key: string]: Trait };
