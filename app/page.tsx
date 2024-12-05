@@ -15,13 +15,6 @@ interface EvidenceData {
   [key: string]: Piece;
 }
 
-
-// Add this right after your imports
-// interface Trait {
-//  name: string;
-//  value: number;
-//}
-
 interface Piece {
   id: string;
   about: string;
