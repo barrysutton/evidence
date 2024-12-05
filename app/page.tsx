@@ -24,10 +24,18 @@ interface Trait {
 }
 
 interface Piece {
-  imageUrl: string;
-  traits: Record<string, Trait>;
+  id: string;
   about: string;
-  relatedPieces: string[]; // or number[] if your IDs are numbers
+  traits: {
+    temporal: { name: string; value: number };
+    material: { name: string; value: number };
+    structural: { name: string; value: number };
+    emergent: { name: string; value: number };
+    fibonacci: { name: string; value: number };
+  };
+  series: string[];  // Change from never[] to string[]
+  imageUrl: string;
+  relatedPieces: string[];
 }
 interface PieceNavigatorProps {
   currentPiece: string;
