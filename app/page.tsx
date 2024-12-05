@@ -11,11 +11,11 @@ import {
 } from "../utils/metrics";
 import Image from "next/image";
 
-interface EvidenceData {
+ interface EvidenceData {
   [key: string]: Piece;
 }
 
-interface Piece {
+ interface Piece {
   id: string;
   about: string;
   traits: {
@@ -29,6 +29,7 @@ interface Piece {
   imageUrl: string;
   relatedPieces: string[];
 }
+
 interface PieceNavigatorProps {
   currentPiece: string;
   onPieceSelect: (piece: string) => void;
