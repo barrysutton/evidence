@@ -8,7 +8,6 @@ import {
   calculateCollectionRank,
   calculateRarityBreakdown,
   calculateCategoryDistribution,
-  computeTraitsInCommon,
 } from "../utils/metrics";
 import Image from "next/image";
 
@@ -270,7 +269,8 @@ const EvidencePage = () => {
       >
         <span>#{related}</span>
         <span className="text-gray-400">
-        {computeTraitsInCommon(piece, (evidenceData as any)[related])} shared traits
+        {/* Commenting out the line */}
+{/* {computeTraitsInCommon(piece, evidenceData[related])} shared traits*/}
         </span>
       </div>
     ))}

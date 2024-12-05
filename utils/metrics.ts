@@ -17,7 +17,7 @@ export function calculateMetrics(pieceData: { traits: Record<string, Trait> }) {
   console.log("Ultra Rare Traits:", ultraRareTraits); // Added log
 
   const combinedRarity = Object.values(pieceData.traits || {})
-    .reduce((acc: number, trait: any) => acc * trait.value, 1);
+  .reduce((acc: number, trait: Trait) => acc * trait.value, 1);
 
   console.log("Combined Rarity:", combinedRarity); // Added log
 
@@ -105,22 +105,18 @@ export function calculateSharedTraits(
 }
 
 // Calculate Traits in Common
-export function computeTraitsInCommon(pieceA: PieceData, pieceB: PieceData) {
-  if (!pieceA.traits || !pieceB.traits) return 0;
-
-  let traitsInCommon = 0;
-
-  Object.keys(pieceA.traits).forEach((traitKey) => {
-    const traitA = pieceA.traits[traitKey];
-    const traitB = pieceB.traits[traitKey];
-
-    if (traitA && traitB && traitA.name === traitB.name && traitA.value === traitB.value) {
-      traitsInCommon++;
-    }
-  });
-
-  return traitsInCommon;
-}
+// Commenting out or deleting computeTraitsInCommon function
+// function computeTraitsInCommon(pieceA: EvidencePiece, pieceB: EvidencePiece): number {
+//   let traitsInCommon = 0;
+//   Object.keys(pieceA.traits).forEach((traitKey) => {
+//     const traitA = pieceA.traits[traitKey];
+//     const traitB = pieceB.traits[traitKey];
+//     if (traitA && traitB && traitA.name === traitB.name && traitA.value === traitB.value) {
+//       traitsInCommon++;
+//     }
+//   });
+//   return traitsInCommon;
+// }
 
 // Sample data test
 const sampleData = {

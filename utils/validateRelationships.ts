@@ -18,7 +18,7 @@ type EvidencePiece = {
   relatedPieces: string[];
 };
 
-const typedEvidenceData: { [id: string]: EvidencePiece } = evidenceData as any;
+const typedEvidenceData: { [id: string]: EvidencePiece } = evidenceData as { [id: string]: EvidencePiece };
 
 // Your validateRelationships logic here
 function computeSharedTraits(pieceA: EvidencePiece, pieceB: EvidencePiece): number {
