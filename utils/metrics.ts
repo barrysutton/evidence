@@ -73,7 +73,7 @@ export function calculateCollectionRank(
 ) {
   const piecesWithMetrics = Object.entries(allPieceData).map(([id, data]) => ({
     id,
-    ultraRareTraits: Object.values(data.traits || {}).filter((trait) => trait.value <= 0.02).length,
+    ultraRareTraits: Object.values(data.traits || {}).filter((trait) => trait.value === 0.02).length,
     combinedRarity: Object.values(data.traits || {}).reduce((acc, trait) => acc * trait.value, 1),
   }));
 
