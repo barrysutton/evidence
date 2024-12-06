@@ -74,17 +74,35 @@ export function calculateCollectionRank(
   const piecesWithMetrics = Object.entries(allPieceData).map(([id, data]) => ({
     id,
     ultraRareTraits: Object.values(data.traits || {}).filter((trait) => trait.value === 0.02).length,
-    combinedRarity: Object.values(data.traits || {}).reduce((acc, trait) => acc * trait.value, 1),
+    combinedRarity: Object.values(data.traits || {})
+    .filter(trait => trait.value > 0)  // Filter out zero values
+    .reduce((acc, trait) => acc * trait.value, 1),
   }));
 
   console.log("Pieces With Metrics:", piecesWithMetrics); // Added log
-
+  piecesWithMetrics.forEach(piece => {
+  
+  console.log(`Piece ID ${piece.id} has ${piece.ultraRareTraits} ultra-rare traits`);
+  console.log(`Piece ID ${piece.id} has combined rarity: ${piece.combinedRarity}`);
+  }); //Added log
+// Add before the sort
+console.log("Before sorting:", piecesWithMetrics.map(p => ({
+  id: p.id,
+  ultraRare: p.ultraRareTraits,
+  rarity: p.combinedRarity
+})));
   piecesWithMetrics.sort((a, b) => {
     if (b.ultraRareTraits !== a.ultraRareTraits) {
       return b.ultraRareTraits - a.ultraRareTraits;
     }
-    return b.combinedRarity - a.combinedRarity; // Sort combined rarity from highest to lowest
+    return a.combinedRarity - b.combinedRarity;  // Lower combined rarity = higher rank
   });
+  // Add after the sort
+console.log("After sorting:", piecesWithMetrics.map(p => ({
+  id: p.id,
+  ultraRare: p.ultraRareTraits,
+  rarity: p.combinedRarity
+})));
 
   const rank = piecesWithMetrics.findIndex((p) => p.id === pieceId) + 1;
   return `#${rank} of ${piecesWithMetrics.length}`;
