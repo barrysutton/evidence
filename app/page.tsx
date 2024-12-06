@@ -8,6 +8,7 @@ import {
   calculateCollectionRank,
   calculateRarityBreakdown,
   calculateCategoryDistribution,
+  calculateSharedTraits  // Add this import
 } from "../utils/metrics";
 import Image from "next/image";
 
@@ -219,57 +220,65 @@ const EvidencePage = () => {
           </section>
 
           <section className="mt-8">
-            <h2 className="text-sm font-light tracking-widest text-gray-400">
-              DATA ANALYSIS
-            </h2>
-            <div className="space-y-8 mt-4">
-              <div>
-                <h3 className="text-sm font-light tracking-widest text-gray-400">
-                  RARITY BREAKDOWN
-                </h3>
-                <div className="text-sm space-y-2">
-                  {Object.entries(calculateRarityBreakdown(piece)).map(([rarity, count]) => (
-                    <div className="flex justify-between" key={rarity}>
-                      <span className="capitalize text-gray-400">{rarity}</span>
-                      <span>{count}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+ <h2 className="text-sm font-light tracking-widest text-gray-400">
+   DATA ANALYSIS
+ </h2>
+ <div className="space-y-8 mt-4">
+   {/* Rarity Breakdown */}
+   <div>
+     <h3 className="text-sm font-light tracking-widest text-gray-400">
+       RARITY BREAKDOWN
+     </h3>
+     <div className="text-sm space-y-2">
+       {Object.entries(calculateRarityBreakdown(piece)).map(([rarity, count]) => (
+         <div className="flex justify-between" key={rarity}>
+           <span className="capitalize text-gray-400">{rarity}</span>
+           <span>{count}</span>
+         </div>
+       ))}
+     </div>
+   </div>
 
-              <div>
-                <h3 className="text-sm font-light tracking-widest text-gray-400">
-                  RELATED PIECES
-                </h3>
-                <div className="text-sm space-y-1">
-                  {piece.relatedPieces.map((related) => (
-                    <div
-                      key={related}
-                      className="flex justify-between text-sm bg-gray-900 bg-opacity-20"
-                    >
-                      <span>#{related}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+   {/* Related Pieces */}
+   <div>
+     <h3 className="text-sm font-light tracking-widest text-gray-400">
+       RELATED PIECES
+     </h3>
+     <div className="text-sm space-y-1">
+       {piece.relatedPieces.map((related) => {
+         const relatedPiece = (evidenceData as EvidenceData)[related];
+         const sharedTraits = calculateSharedTraits(piece.traits, relatedPiece.traits);
+         return (
+           <div
+             key={related}
+             className="flex justify-between text-sm bg-gray-900 bg-opacity-20 p-2"
+           >
+             <span>#{related}</span>
+             <span>{sharedTraits} shared traits</span>
+           </div>
+         );
+       })}
+     </div>
+   </div>
 
-              <div>
-                <h3 className="text-sm font-light tracking-widest text-gray-400">
-                  CATEGORY DISTRIBUTION
-                </h3>
-                <div className="text-sm space-y-2">
-                  {Object.entries(calculateCategoryDistribution(piece)).map(
-                    ([category, percentage]) => (
-                      <div className="flex justify-between" key={category}>
-                        <span className="capitalize text-gray-400">{category}</span>
-                        <span>{percentage.toFixed(2)}%</span>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
-          </section>
+   {/* Category Distribution */}
+   <div>
+     <h3 className="text-sm font-light tracking-widest text-gray-400">
+       CATEGORY DISTRIBUTION
+     </h3>
+     <div className="text-sm space-y-2">
+       {Object.entries(calculateCategoryDistribution(piece)).map(
+         ([category, percentage]) => (
+           <div className="flex justify-between" key={category}>
+             <span className="capitalize text-gray-400">{category}</span>
+             <span>{percentage.toFixed(2)}%</span>
+           </div>
+         )
+       )}
+     </div>
+   </div>
+ </div>
+</section>
         </div>
       </div>
     </main>
