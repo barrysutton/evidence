@@ -3,18 +3,26 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import evidenceData from "../data/evidence.json";
+import visualData from "../data/visualAnalysis.json"; // Import the visual analysis JSON
 import {
   calculateMetrics,
   calculateCollectionRank,
   calculateRarityBreakdown,
   calculateCategoryDistribution,
-  calculateSharedTraits  // Add this import
+  calculateSharedTraits, // Add this import
 } from "../utils/metrics";
 import Image from "next/image";
 
+// Define the types for evidenceData and visualData
 interface EvidenceData {
   [key: string]: Piece;
 }
+
+interface VisualData {
+  [key: string]: string; // Dictionary: keys are strings (IDs), values are strings (text content)
+}
+
+const visualDataTyped: VisualData = visualData as VisualData; // Explicitly cast the imported JSON
 
 interface Piece {
   id: string;
@@ -173,10 +181,13 @@ const EvidencePage = () => {
         </div>
 
         <section className="col-span-full sm:col-span-5">
-          <h2 className="text-sm font-light tracking-widest text-gray-400">
-            ABOUT THIS WORK
-          </h2>
-          <p className="text-sm leading-relaxed text-gray-300 mt-4">{piece.about}</p>
+  <h2 className="text-sm font-light tracking-widest text-gray-400">
+    VISUAL ANALYSIS
+  </h2>
+  <p className="text-sm leading-relaxed text-gray-300 mt-4">
+    {visualDataTyped[currentPiece] || "Visual analysis unavailable."}
+  </p>
+          
 
           {/* Secret Phrase */}
           <div className="mt-8">
