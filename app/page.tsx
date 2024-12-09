@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import evidenceData from "../data/evidence.json";
 import visualData from "../data/visualAnalysis.json"; // Import the visual analysis JSON
@@ -12,6 +13,8 @@ import {
   calculateSharedTraits, // Add this import
 } from "../utils/metrics";
 import Image from "next/image";
+import { ethers, BrowserProvider } from 'ethers';
+import { ExternalProvider } from "@ethersproject/providers";
 
 // Define the types for evidenceData and visualData
 interface EvidenceData {
@@ -131,13 +134,55 @@ const PieceNavigator = ({ currentPiece, onPieceSelect }: PieceNavigatorProps) =>
 
 const EvidencePage = () => {
   const [currentPiece, setPiece] = useState("001");
+  const [walletConnected, setWalletConnected] = useState(false);
+  const [walletAddress, setWalletAddress] = useState("");
   const piece = (evidenceData as EvidenceData)[currentPiece];
 
   if (!piece) return <div>Error: Piece not found</div>;
 
+  // Wallet connection logic
+  const connectWallet = async () => {
+    if (typeof window === "undefined") {
+      return; // Ensure this runs only in the browser
+    }
+
+    if (!window.ethereum) {
+      alert("Please install a Web3 wallet such as MetaMask!");
+      return;
+    }
+
+    try {
+      const provider = new BrowserProvider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      const signer = await provider.getSigner();
+      const address = await signer.getAddress();
+
+      console.log("Wallet connected:", address);
+
+      setWalletAddress(address); // Save the connected wallet address
+      setWalletConnected(true); // Update the connection state
+    } catch (error: any) {
+      if (error.code === 4001) {
+        // MetaMask connection rejected by the user
+        alert("Connection request was rejected. Please try again.");
+      } else {
+        console.error("Failed to connect wallet:", error);
+        alert("An unexpected error occurred. Please try again.");
+      }
+    }
+  };
+
+  // Wallet disconnection logic
+  const disconnectWallet = () => {
+    setWalletConnected(false);
+    setWalletAddress("");
+    console.log("Wallet disconnected.");
+  };
+
   return (
     <main className="min-h-screen bg-black text-white px-8">
-      <header className="bg-black flex justify-center py-8">
+      {/* Header Section */}
+      <header className="bg-black flex justify-between items-center py-8 px-4">
         <Image
           src="/logo-primordium-white.png"
           alt="Site Logo"
@@ -147,6 +192,30 @@ const EvidencePage = () => {
           quality={100}
           priority
         />
+
+        {/* Wallet Connection Section */}
+        <div className="flex items-center">
+          {!walletConnected ? (
+            <button
+              onClick={connectWallet}
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Connect Wallet
+            </button>
+          ) : (
+            <div className="flex flex-col items-center space-y-2">
+              <span className="text-sm text-gray-300">
+                Wallet Connected: {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
+              </span>
+              <button
+                onClick={disconnectWallet}
+                className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+              >
+                Disconnect Wallet
+              </button>
+            </div>
+          )}
+        </div>
       </header>
 
       <div className="grid gap-8 p-4 max-w-[2000px] mx-auto sm:grid-cols-12">
