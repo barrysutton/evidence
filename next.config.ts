@@ -9,23 +9,24 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)', // Apply headers to all routes
+        source: '/:path*',
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self';",
-              "script-src 'self' https://metamask.io https://walletconnect.com 'unsafe-inline' 'unsafe-eval';", // Added 'unsafe-eval' for compatibility with Web3 libraries
-              "connect-src 'self' https://mainnet.infura.io https://rpc.walletconnect.com https://*.infura.io;", // Allow all Infura RPC endpoints
-              "style-src 'self' 'unsafe-inline';",
-              "img-src 'self' data: blob: https://arweave.net https://assets.coingecko.com https://ipfs.io;", // Include whitelisted image domains
-              "frame-src 'self';",
-            ].join(' '), // Join the policy into a single string
-          },
-        ],
-      },
+            value: `
+              default-src 'self';
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' 'wasm-unsafe-eval';
+              connect-src 'self' https://*.infura.io https://*.alchemyapi.io https://ethereum.metamask.io;
+              frame-src 'self' 'unsafe-inline' https://connect.trezor.io https://verify.walletconnect.com;
+              style-src 'self' 'unsafe-inline';
+              img-src 'self' data: https:;
+              font-src 'self' data:;
+            `.replace(/\s+/g, ' ').trim()
+          }
+        ]
+      }
     ];
-  },
+  }
 };
 
 module.exports = nextConfig;
