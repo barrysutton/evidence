@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ethersproject/providers": "^5.7.2",
     "@metamask/providers": "^18.2.0",
     "@types/d3": "^7.4.3",
     "d3": "^7.9.0",

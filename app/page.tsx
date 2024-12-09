@@ -13,8 +13,7 @@ import {
   calculateSharedTraits, // Add this import
 } from "../utils/metrics";
 import Image from "next/image";
-import { ethers, BrowserProvider } from 'ethers';
-import { ExternalProvider } from "@ethersproject/providers";
+import { BrowserProvider } from "ethers";
 
 // Define the types for evidenceData and visualData
 interface EvidenceData {
@@ -142,6 +141,7 @@ const EvidencePage = () => {
 
   // Wallet connection logic
   const connectWallet = async () => {
+    console.log("Connect Wallet button clicked"); // Debug log
     if (typeof window === "undefined") {
       return; // Ensure this runs only in the browser
     }

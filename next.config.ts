@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['arweave.net'],
+    domains: ['arweave.net', 'assets.coingecko.com', 'ipfs.io'], // Add additional image domains as needed
   },
   typescript: {
     ignoreBuildErrors: true,
@@ -15,10 +15,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self';",
-              "script-src 'self' https://metamask.io https://walletconnect.com 'unsafe-inline';", // Replace with actual domains
-              "connect-src 'self' https://mainnet.infura.io https://rpc.walletconnect.com;", // Replace with actual domains
+              "script-src 'self' https://metamask.io https://walletconnect.com 'unsafe-inline' 'unsafe-eval';", // Added 'unsafe-eval' for compatibility with Web3 libraries
+              "connect-src 'self' https://mainnet.infura.io https://rpc.walletconnect.com https://*.infura.io;", // Allow all Infura RPC endpoints
               "style-src 'self' 'unsafe-inline';",
-              "img-src 'self' data: blob:;",
+              "img-src 'self' data: blob: https://arweave.net https://assets.coingecko.com https://ipfs.io;", // Include whitelisted image domains
+              "frame-src 'self';",
             ].join(' '), // Join the policy into a single string
           },
         ],
