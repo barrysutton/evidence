@@ -9,11 +9,17 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)", // Apply to all routes
+        source: '/(.*)', // Apply headers to all routes
         headers: [
           {
-            key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; connect-src *; img-src 'self' data:; style-src 'self' 'unsafe-inline';",
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self';",
+              "script-src 'self' https://metamask.io https://walletconnect.com 'unsafe-inline';", // Replace with actual domains
+              "connect-src 'self' https://mainnet.infura.io https://rpc.walletconnect.com;", // Replace with actual domains
+              "style-src 'self' 'unsafe-inline';",
+              "img-src 'self' data: blob:;",
+            ].join(' '), // Join the policy into a single string
           },
         ],
       },
