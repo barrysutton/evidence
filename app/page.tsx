@@ -14,6 +14,7 @@ import {
 } from "../utils/metrics";
 import Image from "next/image";
 import { BrowserProvider } from "ethers";
+import SecretPhrase from '../components/ui/SecretPhrase';
 
 // Define the types for evidenceData and visualData
 interface EvidenceData {
@@ -264,15 +265,11 @@ const EvidencePage = () => {
           
 
           {/* Secret Phrase */}
-          <div className="mt-8">
-            <h2 className="text-sm font-light tracking-widest text-gray-400">
-              SECRET PHRASE
-            </h2>
-            <p className="text-sm leading-relaxed text-gray-300 italic">
-              *Deeper insights into the creative process for this piece will be generated
-              upon acquisition.
-            </p>
-          </div>
+          <SecretPhrase 
+  tokenId={currentPiece}
+  walletConnected={walletConnected}
+  walletAddress={walletAddress}
+/>
         </section>
 
         <div className="col-span-full sm:col-span-3">
