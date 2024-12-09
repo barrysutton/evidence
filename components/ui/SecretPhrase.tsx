@@ -80,8 +80,7 @@ const SecretPhrase = ({ tokenId, walletConnected, walletAddress }: SecretPhraseP
         <p className="text-sm leading-relaxed text-gray-300 mt-2">{secretPhrase}</p>
       ) : (
         <p className="text-sm leading-relaxed text-gray-300 italic mt-2">
-          *Deeper insights into the creative process for this piece will be generated
-          upon acquisition.
+          *Token-sealed evidence. If you own this artwork, connect your wallet to unlock deeper insights into the creative process.
         </p>
       )}
     </div>
