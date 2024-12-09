@@ -156,15 +156,20 @@ const EvidencePage = () => {
       await provider.send("eth_requestAccounts", []);
       const signer = await provider.getSigner();
       const address = await signer.getAddress();
-
+    
       console.log("Wallet connected:", address);
-
+    
       setWalletAddress(address); // Save the connected wallet address
       setWalletConnected(true); // Update the connection state
-    } catch (error: any) {
-      if (error.code === 4001) {
-        // MetaMask connection rejected by the user
-        alert("Connection request was rejected. Please try again.");
+    } catch (error) {
+      if (error && typeof error === 'object' && 'code' in error) {
+        if (error.code === 4001) {
+          // MetaMask connection rejected by the user
+          alert("Connection request was rejected. Please try again.");
+        } else {
+          console.error("Failed to connect wallet:", error);
+          alert("An unexpected error occurred. Please try again.");
+        }
       } else {
         console.error("Failed to connect wallet:", error);
         alert("An unexpected error occurred. Please try again.");
