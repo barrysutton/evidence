@@ -189,34 +189,40 @@ const EvidencePage = () => {
     <main className="min-h-screen bg-black text-white px-8">
       {/* Header Section */}
      {/* In your page.tsx */}
-<header className="bg-black flex flex-col sm:flex-row justify-between items-center py-4 sm:py-8 px-4 gap-4 sm:gap-0">
-  <Image
-    src="/logo-primordium-white.png"
-    alt="Site Logo"
-    width={212}
-    height={48}
-    className="h-12 w-auto"
-    quality={100}
-    priority
-  />
+     <header className="bg-black flex flex-col sm:flex-row justify-between items-center py-4 sm:py-8 px-4 gap-4 sm:gap-0">
+  <div className="flex flex-col items-center w-full sm:w-auto gap-4">
+    <Image
+      src="/logo-primordium-white.png"
+      alt="Site Logo"
+      width={212}
+      height={48}
+      className="h-12 w-auto"
+      quality={100}
+      priority
+    />
+    {/* Mobile Message */}
+    <p className="sm:hidden text-sm text-gray-400 italic text-center">
+      View on desktop for the optimal experience, including detailed analysis and token verification.
+    </p>
+  </div>
 
   {/* Wallet Connection Section */}
-  <div className="flex items-center">
+  <div className="hidden sm:flex items-center">
     {!walletConnected ? (
       <button
         onClick={connectWallet}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm sm:text-base"
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
       >
         Connect Wallet
       </button>
     ) : (
       <div className="flex flex-col items-end space-y-2">
-        <span className="text-xs sm:text-sm text-gray-300">
+        <span className="text-sm text-gray-300">
           Wallet Connected: {walletAddress.slice(0, 6)}...{walletAddress.slice(-4)}
         </span>
         <button
           onClick={disconnectWallet}
-          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-sm sm:text-base"
+          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
         >
           Disconnect Wallet
         </button>
