@@ -249,17 +249,16 @@ const EvidencePage = () => {
           </div>
 
           <section className="mt-8">
-            <h2 className="text-sm font-light tracking-widest text-gray-400">
-              CATEGORIES & TRAITS
-            </h2>
-            {Object.entries(piece.traits).map(([category, trait]) => (
-              <div key={category} className="text-sm mt-2">
-                <span className="text-gray-400 uppercase">{category}</span>:{" "}
-                <span>{trait.name}</span> -{" "}
-                <span>{(trait.value * 100).toFixed(2)}%</span>
-              </div>
-            ))}
-          </section>
+  <h2 className="text-sm font-light tracking-widest text-gray-400">
+    CATEGORIES & TRAITS
+  </h2>
+  {Object.entries(piece.traits).map(([category, trait]) => (
+    <div key={category} className="text-sm mt-2">
+      <span className="text-gray-400 uppercase">{category}</span>:{" "}
+      <span>{trait.name}</span>
+    </div>
+  ))}
+</section>
         </div>
 
         <section className="col-span-full sm:col-span-5">
